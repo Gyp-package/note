@@ -1,0 +1,21 @@
+问题：
+编写一个函数，这个函数接收一个整数数组 arr 和一个映射函数  fn ，通过该映射函数返回一个新的数组。
+返回数组的创建语句应为 returnedArray[i] = fn(arr[i], i) 。
+请你在不使用内置方法 Array.map 的前提下解决这个问题。
+输入：arr = [1,2,3], fn = function plusone(n) { return n + 1; }
+输出：[2,3,4]
+
+
+
+1.使用arr.from创建新数组
+arr.from(arr,fn) 将arr中的每一个元素都在fn中执行
+
+2.使用reduce累加器，
+var map = function(arr, fn) {
+    //整数数组arr ，映射数组 fn做计算返回新数组
+       return arr.reduce((pre,cur,index)=>{
+//每个元素入栈，进行累加
+        pre.push(fn(cur,index))
+        return pre
+    },[])
+};
