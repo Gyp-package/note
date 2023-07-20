@@ -1,0 +1,51 @@
+ul li {
+    width: 100px;
+    height: 50px;
+    background-color: pink;
+    list-style: none;
+}
+
+
+/* 去掉表单蓝边框 */
+
+input {
+    outline: 0;
+}
+
+
+/* 文本域不可伸缩 */
+
+textarea {
+    resize: none;
+}
+
+
+/* 行内块元素居中对齐 */
+
+img {
+    vertical-align: bottom;
+}
+
+
+/* 一行,多余省略 */
+
+.one {
+    width: 50px;
+    height: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.two {
+    width: 150px;
+    height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* 弹性伸缩盒子模型 */
+    display: -webkit-box;
+    /* 限制在一个块元素现实的文本行数 */
+    -webkit-line-clamp: 2;
+    /* 子元素排列方式 */
+    -webkit-box-orient: vertical;
+}

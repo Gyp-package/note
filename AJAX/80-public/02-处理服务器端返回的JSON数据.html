@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        let xhr = new XMLHttpRequest();
+
+        // ②自动转换字符串为对象
+        // xhr.responseType = 'json'
+        // responseText = xhr.responseText.name;   就不需要手动转化 = JSON.parse(xhr.responseText).name
+
+        // 客户端向服务器端发送请求
+        xhr.open('get', 'http://localhost:3000/responseData');
+        xhr.send();
+        xhr.onload = function() {
+            // console.log(xhr.responseText);
+            // console.log(typeof xhr.responseText);
+            // ①默认字符串手动转换为JSON对象
+            let responseText = JSON.parse(xhr.responseText)
+            console.log(responseText)
+
+            let str = '<h2>' + responseText.name + '</h2>';
+            document.body.innerHTML = str;
+        }
+    </script>
+</body>
+
+</html>

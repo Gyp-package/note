@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    max-width: 540px;
+    min-width: 320px;
+    margin: 0 auto;
+    font: normal 14px/1.5 Tahomn, "Lucide Grande", Verdana, "Microsoft Yahei", STXihei, hei;
+    color: #000;
+    background: #f2f2f2;
+    overflow: hidden;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+
+/* 搜索模块  */
+
+.search-index {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    /* 固定盒子一屏幕为主,要有宽度 */
+    width: 100%;
+    min-width: 320px;
+    max-width: 540px;
+    height: 44px;
+    /* background-color: pink; */
+}
+
+.search {
+    position: relative;
+    height: 24px;
+    /* border: 1px solid #000; */
+    flex: 1;
+    /* 搜索框自适应 */
+    margin: 6px 10px;
+    border-radius: 5px;
+    font-size: 10px;
+    color: #666;
+    padding-left: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    background-color: #f6f6f6;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.search::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    /* display: block; */
+    width: 15px;
+    height: 15px;
+    background: url(/a10蓝色气泡.png)no-repeat -59px -279px;
+    background-size: auto;
+}
+
+.user {
+    display: block;
+    width: 44px;
+    height: 44px;
+    background-color: #fff;
+    font-size: 14px;
+    text-align: center;
+    color: aqua;
+    margin: 3px 5px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.user::before {
+    /* position: absolute;
+    top: 5px;
+    left: 5px; */
+    content: "";
+    display: block;
+    width: 23px;
+    background-color: url(小破站.png) no-repeat;
+    background-size: 104px auto;
+    margin: 4px auto 0;
+}
+
+.focus {
+    padding-top: 44px;
+}
+
+.focus img {
+    width: 100%;
+    height: 100px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.local-nav li {
+    flex: 1;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.local-nav {
+    display: flex;
+    /* 好好用哪！！父级flex，子级每个沾一份！ */
+    height: 64px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin: 3px 4px;
+}
+
+
+/* ！！！！flex上下布局 */
+
+.local-nav a {
+    display: flex;
+    flex-direction: column;
+    /* 父级主轴设为Y轴,侧轴居中对齐， 单行*/
+    align-items: center;
+    font-size: 12px;
+}
+
+
+/* 属性选择器 */
+
+.local-nav li [class^="local-nav-icon"] {
+    width: 32px;
+    height: 32px;
+    background-color: pink;
+    margin-top: 8px;
+    background: url(b站大头.png) no-repeat 0 0;
+    background-size: 32px auto;
+}
+
+
+/* 精灵图设置 */
+
+.local-nav li .local-nav-icon-icon2 {
+    background-position: 0 -32px;
+}
+
+.local-nav li .local-nav-icon-icon3 {
+    background-position: 0 -64px;
+}
+
+.local-nav li .local-nav-icon-icon4 {
+    background-position: 0 -96px;
+}
+
+.local-nav li .local-nav-icon-icon5 {
+    background-position: 0 -128px;
+}
+
+nav {
+    border-radius: 8px;
+    margin: 0 4px 3px;
+    overflow: hidden;
+}
+
+
+/* 父控件圆角，子控件没有，可以父级设置overflow:hidden; */
+
+.nav-common {
+    display: flex;
+    height: 88px;
+    margin-bottom: 3px;
+    border-radius: 8px;
+    background-color: pink;
+}
+
+
+/* 不冲突 */
+
+.nav-items {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-items a {
+    flex: 1;
+    line-height: 44px;
+    color: #f2f2f2;
+    font-size: 14px;
+    /* 添加文字阴影水平垂直各1px, */
+    text-shadow: 1px 1px rgba(0, 0, 0, .2);
+}
+
+.nav-items a:nth-child(1) {
+    border-bottom: 3px solid #fff;
+}
+
+.nav-items:nth-child(1) a {
+    border-bottom: 0 solid #000;
+    /* background: url(b海边.jpg) no-repeat bottom center;
+    background-size: 121px auto; */
+    /* 背景缩放 */
+}
+
+
+/* 给前两个nth-items(-n+2)盒子设置白色边框 */
+
+.nav-items:nth-child(-n+2) {
+    border-right: 3px solid #fff;
+}
+
+
+/* 渐变背景 */
+
+.nav-common:nth-child(1) {
+    background: -webkit-linear-gradient(left, rgb(255, 149, 0), rgb(255, 60, 0));
+}
+
+
+/* flex强制换行  flex-wrap: wrap; */
+
+.subnav-entry {
+    border-radius: 8px;
+    background-color: #fff;
+    margin: 0 4px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.subnav-entry li {
+    flex: 20%;
+    text-align: center;
+}
+
+.subnav-entry a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subnav-entry-icon {
+    width: 28px;
+    height: 28px;
+    background-color: black;
+    flex: 1;
+}

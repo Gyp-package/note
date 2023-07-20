@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米侧栏</title>
+    <style>
+        a {
+            /* 文字如何垂直居中！还没有实现21:18 */
+            text-indent: 2em;
+            display: block;
+            width: 200px;
+            height: 40px;
+            /* 盒子可能会撑大边框宽度，本身有宽度，需要手动减去边框，防止边框外溢  */
+            padding-left: 30px;
+            line-height: 40px;
+            /* 实现文字居中：文字高度等于盒子的高度
+            文字高度line-height 大于盒子的高度，偏低
+            */
+            background-color: gray;
+            text-decoration: none;
+            font-size: 14px;
+            color: #fff;
+        }
+        
+        a:hover {
+            /* 鼠标经链接背景变色 */
+            background-color: rgb(254, 103, 0);
+        }
+        
+        h3 {
+            /* width: 118px;
+            height: 40px;*/
+            width: 200px;
+            /* background-color: pink; */
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 40px;
+            background-image: url(小破站.png);
+            background-repeat: no-repeat;
+            background-position: left center;
+            text-indent: 5em;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="a">
+        <span><a href="#">手机 电话卡</a></span>
+        <span><a href="#">电视 盒子</a></span>
+        <span><a href="#">笔记本 平板</a></span>
+        <span><a href="#">出行 穿戴</a></span>
+        <span><a href="#">智能 路由器</a></span>
+        <span><a href="#">健康 儿童</a></span > 
+        <span><a href="#">耳机 音响</a></span>
+    </div>
+    <br> 控制图片位置
+    <br>
+    <h3>
+        健康成长好好学习
+    </h3>
+</body>
+
+</html>

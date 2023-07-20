@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>百度一下，你就知道</title>
+    <link rel="icon" type="image/x-icon" href="baidutitile.ico" />
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+        /* 导航栏 */
+        
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .box {
+            width: 100%;
+            height: 100px;
+            background-repeat: no-repeat;
+            background-size: 100% 0%;
+            /* background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%); */
+        }
+        /* 居中 */
+        
+        .container {
+            width: 900px;
+            height: 100px;
+            margin: 0 auto;
+        }
+        /* 去掉黑点 ,浮动*/
+        
+        li {
+            list-style: none;
+            float: left;
+            width: 128px;
+            text-align: center;
+            line-height: 100px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        
+        a:link {
+            color: red;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: yellowgreen;
+            text-decoration: none;
+        }
+        /* 下面是搜索框 */
+        
+        .a {
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border-radius: 40px;
+            padding: 10px;
+        }
+        
+        .a:hover.b {
+            width: 200px;
+            padding: 0 6px;
+        }
+        
+        .a:hover.c {
+            background-color: white;
+        }
+        
+        .b {
+            border: 0;
+            background-color: white;
+            transition: .4s;
+            line-height: 30px;
+            font-size: 20px;
+            color: rgb(0, 0, 0);
+        }
+        
+        p {
+            color: black;
+        }
+        
+        b #myheader {
+            padding: 40px;
+        }
+        /* 制作背景 */
+        
+        body {
+            height: 100vh;
+            margin: 0;
+            background-image: url("海边.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            /* background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%); */
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="box">
+        <div class="container">
+            <ul>
+                <li> <a href=" http://news.baidu.com/ " target="_blank ">视频</a></li>
+                <li> <a href="https://www.hao123.com/?src=from_pc " target="_blank ">hao123</a></li>
+                <li><a href="https://map.baidu.com/@12126761,4028479,13z " target="_blank ">地图</a></li>
+                <li> <a href="https://tieba.baidu.com/index.html " target="_blank ">贴吧</a></li>
+                <li><a href="https://haokan.baidu.com/?sfrom=baidu-top " target="_blank ">视频</a></li>
+                <li> <a href="https://image.baidu.com/ " target="_blank ">图片</a></li>
+                <li> <a href="https://pan.baidu.com/?from=1026962h " target="_blank ">网盘</a></li>
+            </ul>
+        </div>
+        </p>
+        <div class="a">
+            <!-- a是搜索框的位置以及边框图形 -->
+            <form target="_blank" method="get" action="https://www.baidu.com/s">
+                <!-- 搜索框 -->
+                <input type="text" placeholder="请输入关键词" name="word" class="b" />
+                <!-- 连接的图片 -->
+                <a href="https://www.baidu.com/" class="c">
+                    <img src="搜索框 4.png" style="width: 30px;">
+                </a>
+            </form>
+        </div>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    width: 100px;
+    height: 200px;
+    float: left;
+    border: 2px solid red;
+    margin-left: -2px;
+}
+
+ul li:hover {
+    /* 当前盒子边框占有位置，显示出来 */
+    position: relative;
+    border-color: blue;
+}
+
+
+/* 文字围绕图片 */
+
+.box {
+    float: left;
+    /* margin: 200px auto; */
+    width: 259px;
+    height: 160px;
+    background-color: pink;
+}
+
+.pic {
+    float: left;
+    padding: 5px;
+}
+
+
+/* 页码 */
+
+.box2 {
+    display: block;
+    text-align: center;
+}
+
+.box2 a {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background-color: #fff;
+    border: 1px solid #000;
+    text-align: center;
+    line-height: 36px;
+    text-decoration: none;
+    color: #333;
+    font-style: 14px;
+}
+
+.box2 .prev,
+.box2 .next {
+    width: 85px;
+}
+
+.box2 .current,
+.box2 .elp {
+    border: none;
+}
+
+.box2 input {
+    height: 36px;
+    width: 45px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.box2 button {
+    width: 60px;
+    height: 45px;
+    border: 1px solid #ccc;
+}

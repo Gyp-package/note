@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 四个三角构成正方形 */
+
+.box {
+    width: 0;
+    height: 0;
+    border-top: 10px solid pink;
+    border-right: 10px solid red;
+    border-bottom: 10px solid blue;
+    border-left: 10px solid green;
+}
+
+.box2 {
+    width: 0;
+    height: 0;
+    /* 兼容性 */
+    line-height: 0;
+    font-size: 0;
+    /* 背景一定设置透明 */
+    border: 10px solid transparent;
+    /* 底向上 */
+    border-top-color: pink;
+    /* 底向左
+    border-left-color:blue;
+    底向右
+    border-right-color: green;
+    低向下
+    border-bottom-color: yellow; */
+    margin: 10px auto;
+}
+
+
+/* 京东案例 */
+
+.jd {
+    position: relative;
+    width: 120px;
+    height: 249px;
+    background-color: pink;
+}
+
+.jd span {
+    position: absolute;
+    height: 0;
+    width: 0;
+    line-height: 0;
+    font-size: 0;
+    border: 5px solid transparent;
+    border-bottom-color: pink;
+    right: 15px;
+    /* 绝对定位高度向上距离是边框上下和 */
+    top: -10px;
+}
+
+
+/* 小米案例 */
+
+.xiaomi {
+    position: relative;
+    width: 150px;
+    height: 70px;
+    background-color: #333;
+    margin: 10px auto;
+}
+
+.xiaomi span {
+    position: absolute;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    border: 5px solid transparent;
+    border-left-color: pink;
+    right: -10px;
+    top: 10px;
+}
+
+.box3 {
+    width: 0;
+    height: 0;
+    /* 顶部宽度调大 */
+    border-top: 100px solid transparent;
+    /* 右边直角 */
+    border-right: 50px solid skyblue;
+    /* 不要下三角 */
+    border-bottom: 0px solid blue;
+    /* 不要左三角 */
+    border-left: 0px solid green;
+}
+
+
+/* 京东价格 */
+
+.price {
+    width: 160px;
+    height: 24px;
+    border: 1px solid red;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.miao {
+    position: relative;
+    float: left;
+    width: 90px;
+    height: 100%;
+    background-color: rgb(249, 154, 46);
+    text-align: center;
+    font-weight: 800;
+    color: white;
+    margin-right: 8px;
+}
+
+.miao i {
+    position: absolute;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-width: 24px 10px 0 0;
+    border-color: transparent #fff transparent transparent;
+    border-style: solid;
+}
+
+.zhijiao {
+    font-size: 12px;
+    color: gray;
+    text-decoration: line-through;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">发送Ajax请求</button>
+    <script>
+        let btn = document.querySelector('#btn');
+        btn.addEventListener('click', function() {
+            let xhr = new XMLHttpRequest();
+            xhr.open('get', 'http://localhost:3000/error')
+            xhr.send();
+            // 方法一：获取服务器端响应到的客户端数据onload
+            xhr.addEventListener('load', function() {
+                    console.log(xhr.responseText);
+
+                    // xhr.status获取http状态码
+                    if (xhr.status === 400) {
+                        console.log('出错额');
+                    }
+                })
+                // 原因二：404 请求地址错误
+                // 原因三：500 服务器端错误，js发出错误
+                // 原因四：离线,请求无法发送到服务器端， 
+            xhr.onerror = function() {
+                    console.log('网断了，无法发送ajax');
+                }
+                // Ajax状态码：表示Ajax请求的过程状态，ajax对象返回的
+                // http状态码：表示请求的处理结果，是服务器端返回的
+        })
+    </script>
+</body>
+
+</html>

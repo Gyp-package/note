@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css选择器</title>
+    <style>
+        .nav>a {
+            color: brown;
+            background-color: antiquewhite;
+            width: 100px;
+        }
+        
+        .demo1 {
+            text-align: center;
+            line-height: 26px;
+            text-decoration-line: line-through;
+        }
+        
+        .mm {
+            background-color: blanchedalmond;
+        }
+        
+        ol li {
+            color: pink;
+        }
+        
+        ol li a {
+            color: red;
+            text-decoration: none;
+        }
+        
+        .is li a {
+            background-color: black;
+            color: white;
+        }
+        
+        div,
+        p,
+        ul {
+            color: pink;
+            background-color: black;
+        }
+        
+        input:focus {
+            background-color: yellow;
+        }
+        
+        a:link {
+            color: chartreuse;
+            text-decoration: none;
+        }
+        
+        a:visited {
+            color: red;
+        }
+        
+        a:hover {
+            color: blue;
+        }
+        
+        a:active {
+            color: aqua;
+        }
+        
+        a {
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="本节课的目标.png" alt="本节课的目标" width="300px"> Emmet语法
+    <p></p>
+    <ul>
+        <li>父子关系用>大于号</li>
+        <li>多个标签引用用*乘号</li>
+        <li>兄弟关系用加号</li>
+    </ul>
+    <div class="nav">body中快速调用class属性使用.nav默认div属性即可，地址属性使用 # ，p标签使用p.one
+        <br>
+        <a href="#">use named by gyp</a><br>
+        <div>亲儿子，子元素选择器，div > a</div>
+        <p>
+            <a href="#">use named by ggg</a>
+        </p>
+        <span class="gray">这个快捷键是span.gray</span>
+        <ul>
+            <li class="two">这个快捷键是ul>li.two</li>
+        </ul>
+        <div class="demo1">该快捷键是 .demo$*3</div>
+        <div class="demo2">该快捷键是 .demo$*3</div>
+        <div class="demo3">该快捷键是 .demo$*3</div>
+        <div>也可以直接使用大括号{}</div>
+        <div>1￥使用连乘，div{$}*5</div>
+        <div class="mm">选择器包括基础选择器和复合选择器<br> 复合选择器包含多个基础选择器
+            <br> 常用的复合选择器包含后代选择器，子选择器，并集选择器，伪类选择器
+            <br>
+        </div>
+        <div class="ss">后代选择器<br>
+            <ol>
+                li之外的不被包括
+                <li>你好优秀</li>
+                <li>后代选择器，元素1是元素2的孩子，中间有空格</li>
+                <li><a href="#">一个链接</a></li>
+            </ol>
+            <ul class="is">
+                <li>鸭子</li>
+                <li>小鸡</li>
+                <li><a href="#">猴子</a></li>
+            </ul>
+        </div>
+        <div>并集选择器：选择多组标签，同事定义相同样式</div>
+        <p>吃吃水果</p>
+        <ul>
+            <li>佩奇</li>
+            <li>哈利</li>
+            <li>苏西,用的并集选择器</li>
+        </ul>
+        <div>伪类选择器：添加效果：hover. : first-child <br> 链接伪类选择器，结构伪类，
+        </div>
+        <form action="/example/html5/demo_form.asp">
+            <input type="text"> :focus伪类选择器
+            <input type="text"></form>
+        <img src="链接伪类选择器.jpg" alt="链接伪类选择器" width="500px"><br>
+        <a href="#">这是一个链接</a><br>
+
+</body>
+
+</html>

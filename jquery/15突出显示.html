@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>突出显示</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .wrap {
+            margin: auto;
+            width: 1000px;
+            height: 600px;
+            border: 1px solid #333;
+        }
+        
+        li {
+            list-style: none;
+            float: left;
+            padding: 49px 25px;
+        }
+        
+        li a {
+            display: block;
+        }
+    </style>
+    <script src="./jquery.min.js"></script>
+    <script>
+        $(function() {
+            $(".wrap li").mouseenter(function() {
+                $(this).stop().fadeTo(200, 1).siblings().stop().fadeTo(200, 0.5)
+            })
+
+            // $(".wrap li").hover(function() {
+            //         $(this).siblings().stop().fadeTo(000, 0.5);
+            //     }),
+            //     function() {
+            //         $(this).siblings().stop().fadeTo(000, 1);
+            //     }
+
+        })
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul>
+            <li>
+                <a href="#"><img src="./1.jpeg" alt="" width="200px" height="200px"></a>
+            </li>
+            <li>
+                <a href="#"><img src="./2.jpg" alt="" width="200px" height="200px"></a>
+            </li>
+            <li>
+                <a href="#"><img src="./3.jpg" alt="" width="200px" height="200px"></a>
+            </li>
+            <li>
+                <a href="#"><img src="./4.jpg" alt="" width="200px" height="200px"></a>
+            </li>
+            <li>
+                <a href="#"><img src="./5.jpg" alt="" width="200px" height="200px"></a>
+            </li>
+            <li>
+                <a href="#"><img src="./6.jpg" alt="" width="200px" height="200px"></a>
+            </li>
+            <li>
+                <a href="#"><img src="./7.jpg" alt="" width="200px" height="200px"></a>
+            </li>
+            <li>
+                <a href="#"><img src="./8.jpg" alt="" width="200px" height="200px"></a>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

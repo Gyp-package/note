@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            width: 1840px;
+            height: 690px;
+            background-color: pink;
+            margin: auto;
+        }
+        
+        .left {
+            float: left;
+            width: 355px;
+            height: 690px;
+            background-color: purple;
+        }
+        
+        .right {
+            float: left;
+            width: 1485px;
+            height: 690px;
+            background-color: skyblue;
+        }
+        /* 盒子有间隙 */
+        
+        li {
+            list-style: none;
+        }
+        
+        .box1 {
+            width: 1226px;
+            height: 285px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+        
+        .box1 li {
+            width: 296px;
+            height: 285px;
+            background-color: Purple;
+            float: left;
+            margin-right: 14px;
+        }
+        /* 注意权重叠加 ，第四个不需要右边距，需要单独提出来*/
+        
+        .box1 .qq {
+            margin-right: 0;
+        }
+        
+        .box3 {
+            border: 3px solid black;
+            width: 1227px;
+            height: 615px;
+            background-color: rgba(0, 255, 200, 0.614);
+            margin: 0 auto;
+        }
+        
+        .pp {
+            float: left;
+            width: 200px;
+            height: 575px;
+            background-color: green;
+            margin: 20px 0 20px 35px;
+            line-height: 575px;
+            text-align: center;
+        }
+        
+        .oo {
+            float: left;
+            width: 892px;
+            height: 555px;
+            background-color: rgb(255, 166, 0);
+            margin: 30px 40px 30px 0px;
+        }
+        
+        .oo>div {
+            float: left;
+            width: 202.5px;
+            height: 264.5px;
+            background-color: pink;
+            margin-left: 20px;
+            margin-bottom: 14px;
+        }
+        
+        .box4 {
+            width: 950px;
+            height: 740px;
+            margin: 0 auto;
+        }
+        
+        .top {
+            /* width: 930px; 通栏不需要设置宽度*/
+            height: 50px;
+            background-color: rgba(255, 31, 31, 0.653);
+        }
+        
+        .banner {
+            background-color: rgb(173, 168, 168);
+            width: 675px;
+            height: 130px;
+            /* 盒子距离一定要加单位哦px */
+            margin: 10px auto;
+        }
+        
+        .fang {
+            width: 675px;
+            height: 100px;
+            margin: auto;
+        }
+        
+        .fang li {
+            list-style: none;
+            float: left;
+            background-color: rgb(130, 109, 109);
+            width: 165px;
+            height: 100px;
+            margin-right: 5px;
+        }
+        
+        .fang li:last-child {
+            margin-right: 0px;
+        }
+        
+        .kuang {
+            margin: auto;
+            margin-top: 10px;
+            width: 675px;
+            height: 215px;
+        }
+        
+        .kuang div {
+            float: left;
+            border: 2px solid black;
+            background-color: rgb(87, 66, 66);
+            width: 160px;
+            height: 215px;
+            margin-right: 5px;
+        }
+        
+        .kuang div:last-child {
+            margin-right: 0px;
+        }
+        
+        .footer {
+            border: 2px solid black;
+            background-color: rgb(134, 5, 5);
+            width: 930px;
+            height: 170px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    案例1 <br>
+    <div class="box">
+        <div class="left">
+            左侧盒子
+        </div>
+        <div class="right">
+            右侧盒子
+        </div>
+    </div>
+    <br><br> 案例2：
+    <br>
+    <ul class="box1">
+        <li>11</li>
+        <li>22</li>
+        <li>33</li>
+        <li class="qq">44</li>
+    </ul>
+    案例3 <br>
+    <div class="box3">
+        <div class="pp">
+            绿色
+        </div>
+        <div class="oo">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div>
+    </div>
+    案例4 <br>
+    <div class="box4">
+        <div class="top">
+            top
+        </div>
+        <div class="banner">
+            banner
+        </div>
+        <div class="fang">
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li class="ll">4</li>
+            </ul>
+        </div>
+        <div class="kuang">
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div>
+        <div class="footer">
+            footer，通栏不需要设置宽
+        </div>
+    </div>
+
+</body>
+
+</html>

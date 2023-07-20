@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.box1 {
+    list-style-type: none;
+    width: 200px;
+    height: 200px;
+    background-color: #f1f1f1;
+    border: 1px solid black;
+}
+
+.box1 li a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+}
+
+.box1 li {
+    border-bottom: 1px solid #000;
+}
+
+.box1 li:last-child {
+    border-bottom: none;
+}
+
+.box1 li a.active {
+    background-color: #4CAF50;
+    columns: white;
+}
+
+.box1 li a:hover:not(.active) {
+    background-color: pink;
+    color: white;
+}
+
+.box2 {
+    list-style-type: none;
+    background-color: #000;
+    overflow: hidden;
+    height: 50px;
+}
+
+.box2 li {
+    float: left;
+}
+
+.box2 li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    /* text-align: center; */
+    padding: 14px 16px;
+}
+
+.box2 li a:hover {
+    background-color: green;
+}
+
+.box3 {
+    list-style-type: none;
+    overflow: hidden;
+    border: 1px solid black;
+}
+
+.box3 li {
+    float: left;
+}
+
+.box3 li a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 14px 16px;
+}
+
+.box3 li a.active {
+    background-color: pink;
+}
+
+.box3 li a:hover:not(.active) {
+    color: white;
+    background-color: skyblue;
+}
+
+.header,
+.footer {
+    background-color: grey;
+    color: white;
+    padding: 15px;
+}
+
+.column {
+    float: left;
+    padding: 15px;
+}
+
+.fu {
+    position: relative;
+    display: inline-block;
+}
+
+.zi {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.fu:hover .zi {
+    display: block;
+}
+
+.fa {
+    display: inline-block;
+    position: relative;
+}
+
+.xianshi {
+    background-color: rgb(76, 175, 80);
+    color: #f1f1f1;
+    padding: 16px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.son {
+    position: absolute;
+    display: none;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.son a {
+    color: #000;
+    padding: 16px 12px;
+    text-decoration: none;
+    display: block;
+}
+
+.son a:hover {
+    background-color: skyblue;
+}
+
+.fa:hover .son {
+    display: block;
+}
+
+.fa:hover .xianshi {
+    background-color: #3e8e41;
+}

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>我的购物车-品优购</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/car.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* nav */
+        
+        input {
+            outline: none;
+        }
+        
+        nav {
+            width: 1070px;
+            height: 80px;
+            background-color: #e9e6b8;
+            margin-bottom: 20px;
+            line-height: 80px;
+            padding: 0 40px;
+        }
+        
+        nav ul {
+            width: 1100px;
+        }
+        
+        nav ul li {
+            float: left;
+            list-style: none;
+            width: 170px;
+            height: 60px;
+            font-size: 20px;
+        }
+        
+        nav ul li:nth-child(6) {
+            margin-left: 60px;
+        }
+        
+        nav ul li:nth-child(6),
+        nav ul li:nth-child(7) {
+            width: 60px;
+            font-size: 16px;
+        }
+        
+        .current {
+            background-color: #e0dfd7;
+        }
+        /* 购物车主体 */
+        
+        div {
+            box-sizing: border-box;
+        }
+        
+        .cart-head {
+            width: 1070px;
+            height: 50px;
+            background-color: #eeeddd;
+            padding-top: 15px;
+            padding-left: 10px;
+        }
+        
+        .cart-head div,
+        .cart-head input {
+            float: left;
+        }
+        
+        .cart-head input[type=checkbox] {
+            margin-right: 3px;
+        }
+        
+        .commodity {
+            margin-left: 100px;
+        }
+        
+        .price {
+            margin-left: 300px;
+        }
+        
+        .num,
+        .sum,
+        .operation {
+            margin-left: 100px;
+        }
+        /* 商品内容模块 */
+        
+        .cart-content {
+            margin-top: 10px;
+        }
+        
+        .cart-content .item {
+            width: 1070px;
+            height: 200px;
+            border-top: 1px solid #ccc;
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+        
+        .item .box {
+            float: left;
+            width: 300px;
+            height: 100px;
+            margin-left: 50px;
+            margin-top: 50px;
+        }
+        
+        .cart-content .item input {
+            display: block;
+            float: left;
+            margin-top: 90px;
+            background-color: #ccc;
+        }
+        
+        .item .box img {
+            width: 145px;
+            float: left;
+            margin-right: 5px;
+        }
+        
+        .item .box p {
+            text-indent: 2em;
+            width: 145px;
+            float: left;
+            font-size: 12px;
+        }
+        
+        .item>div {
+            float: left;
+            margin-top: 100px;
+        }
+        
+        .item-price {
+            margin-left: 107px;
+        }
+        
+        .item-num {
+            margin-left: 70px;
+        }
+        
+        .item-sum {
+            margin-left: 72px;
+        }
+        
+        .item-opration {
+            margin-left: 90px;
+        }
+        
+        .item-num span {
+            display: block;
+            width: 15px;
+            height: 20px;
+            float: left;
+            border: 1px solid #ccc;
+            margin-top: 0px;
+            text-align: center;
+            line-height: 17px;
+        }
+        
+        .item .item-num .nums {
+            float: left;
+            width: 35px;
+            height: 20px;
+            border: 1px solid #ccc;
+            text-align: center;
+            font-size: 12px;
+            line-height: 20px;
+            margin-top: 0;
+        }
+        /* 总计 */
+        
+        .cart-footer {
+            width: 1070px;
+            height: 100px;
+            background-color: #eeeddd;
+            line-height: 90px;
+            padding-left: 10px;
+        }
+        
+        .cart-footer .select-all input {
+            vertical-align: middle;
+            margin-top: -2px;
+        }
+        
+        .cart-footer .select-all span {
+            vertical-align: middle;
+            display: inline-block;
+        }
+        
+        .cart-footer>div {
+            float: left;
+            line-height: 100px;
+        }
+        
+        .footer-total {
+            margin-left: 435px;
+        }
+        
+        .footer-price {
+            margin-left: 70px;
+        }
+        
+        .footer-num {
+            margin-left: 105px;
+        }
+        
+        .footer-sum {
+            margin-left: 95px;
+        }
+        
+        .footer-opration {
+            margin-left: 95px;
+        }
+        
+        .w {
+            width: 1070px!important;
+        }
+    </style>
+    <script src="./jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container w">
+        <div class="row">
+            <nav>
+                <ul>
+                    <li>首页</li>
+                    <li>服装</li>
+                    <li>手机</li>
+                    <li>电脑</li>
+                    <li>日用</li>
+                    <li>注册</li>
+                    <li>登录</li>
+                </ul>
+            </nav>
+        </div>
+        <div class="row w">
+            <div class="cart-head">
+                <div class="select-all">
+                    <input type="checkbox" name="" id=""> 全选
+                </div>
+                <div class="commodity">商品</div>
+                <div class="price">价格</div>
+                <div class="num">数量</div>
+                <div class="sum">小计</div>
+                <div class="operation">操作</div>
+            </div>
+        </div>
+        <!-- 商品详细模块 -->
+        <div class="row w">
+            <div class="cart-content">
+                <div class="item">
+                    <input type="checkbox" name="" id="checkbox">
+                    <div class="box">
+                        <img src="images/1.jpg" alt="">
+                        <p>月亮与六便士正版书籍 毛姆经典作品青少 世界经典文学名著书籍畅销书排行榜</p>
+                    </div>
+                    <div class="item-price">￥12.60</div>
+                    <div class="item-num">
+                        <span class="left">-</span>
+                        <input type="text" value="1" class="nums">
+                        <span class="right">+</span>
+                    </div>
+                    <div class="item-sum">￥12.60</div>
+                    <div class="item-opration">删除</div>
+                </div>
+                <div class="item">
+                    <input type="checkbox" name="" id="checkbox">
+                    <div class="box">
+                        <img src="images/2.jpg" alt="">
+                        <p>月亮与六便士正版书籍 毛姆经典作品青少 世界经典文学名著书籍畅销书排行榜</p>
+                    </div>
+                    <div class="item-price">￥25.80</div>
+                    <div class="item-num">
+                        <span class="left">-</span>
+                        <input type="text" value="1" class="nums">
+                        <span class="right">+</span>
+                    </div>
+                    <div class="item-sum">￥25.80</div>
+                    <div class="item-opration">删除</div>
+                </div>
+                <div class="item">
+                    <input type="checkbox" name="" id="checkbox">
+                    <div class="box">
+                        <img src="images/3.jpg" alt="">
+                        <p>月亮与六便士正版书籍 毛姆经典作品青少 世界经典文学名著书籍畅销书排行榜</p>
+                    </div>
+                    <div class="item-price">￥32.10</div>
+                    <div class="item-num">
+                        <span class="left">-</span>
+                        <input type="text" value="1" class="nums">
+                        <span class="right">+</span>
+                    </div>
+                    <div class="item-sum">￥32.10</div>
+                    <div class="item-opration">删除</div>
+                </div>
+                <div class="item">
+                    <input type="checkbox" name="" id="checkbox">
+                    <div class="box">
+                        <img src="images/4.jpg" alt="">
+                        <p>月亮与六便士正版书籍 毛姆经典作品青少 世界经典文学名著书籍畅销书排行榜</p>
+                    </div>
+                    <div class="item-price">￥22.40</div>
+                    <div class="item-num">
+                        <span class="left">-</span>
+                        <input type="text" value="1" class="nums">
+                        <span class="right">+</span>
+                    </div>
+                    <div class="item-sum">￥22.40</div>
+                    <div class="item-opration">删除</div>
+                </div>
+
+            </div>
+        </div>
+        <!-- 商品总计 -->
+        <div class="row w">
+            <div class="cart-footer">
+                <!-- 全选 -->
+                <div class="select-all">
+                    <input type="checkbox" name="" id="">
+                    <span>全选</span>
+                </div>
+                <div class="footer-total">总计</div>
+                <div class="footer-num">
+                    <span>1</span>
+                </div>
+                <div class="footer-sum">￥14.30</div>
+                <div class="footer-opration">删除</div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<script>
+    $(function() {
+        // 给nav导航栏中的li添加悬浮变字体颜色的效果（完全可以不用做）
+        $("nav li").stop().mouseenter(function() {
+            $(this).css('color', 'red');
+        }).stop().mouseleave(function() {
+            $(this).css('color', '#000');
+        })
+        getPriceSum();
+        // 让全选按钮的checked属性的状态和所有item的复选框状态一致
+        // checked属性改变之后触发
+        $(".select-all input").change(function() {
+            // 获取它的状态，给所有的item里面的复选框赋值
+            var check = $(this).prop('checked');
+            // 让每个小项目和全选按钮同时改变值,否则点击最上面全选按钮，最下面全选按钮选不上
+            $(".item input,.select-all input").prop('checked', check);
+            // 当全选按钮发生改变，如果是选中状态给所有的item加current类
+            if (check) {
+                $('.item').addClass('current');
+            } else {
+                $('.item').removeClass('current');
+            }
+        });
+
+        // 点击下面每个项目中的复选框，如果复选框都选上了，让上面下面的全选按钮也选上；
+        // 如果没都选上，就让全选按钮处于没选中状态。
+        $(".item input").change(function() {
+            // 如果所有item中复选框被选中的数目等于总数，就让让全选按钮也选上
+            // $(".item input:checked")：被选中的个数，但他是以伪元素形式输出，再加上.length即可
+            if ($(".item input:checked").length == $(".item").length) {
+                $(".select-all input").prop('checked', true);
+            } else if ($(".item input:checked").length < $(".item").length) {
+                $(".select-all input").prop('checked', false);
+            }
+            // 当点击每个item前面的复选框按钮时，如果是选中状态就添加current类
+            var check = $(this).prop('checked');
+            if (check) {
+                $(this).parents('.item').addClass('current');
+            } else {
+                $(this).parents('.item').removeClass('current');
+            }
+        });
+
+
+        // 增加商品数量模块，点击加号时，让当前商品数量++
+        $(".item .right").click(function() {
+            var num = $(this).siblings('.nums').val();
+            num++;
+            $(this).siblings('.nums').val(num);
+            // 点击右侧按钮时候，当前的商品后面的小计也要做相应的改变
+            // 把价格中的数字截取出来*数目，再赋值给小计，赋值时+"￥"。
+            var price = $(this).parents('.item-num').siblings('.item-price').text().substr(1);
+            // 计算结果，保留两位小数
+            var sum = (price * num).toFixed(2);
+            // 给他爹的兄弟赋值
+            $(this).parents('.item-num').siblings('.item-sum').text("￥" + sum);
+            getsum();
+            getPriceSum();
+        });
+
+
+        // 减少商品，当点击左按钮时，先获取再--，最后赋值；到了1就不能再减了。
+        $(".item .left").click(function() {
+            var num = $(this).siblings('.nums').val();
+            if (num <= 1) {
+                return false;
+            }
+            num--;
+            $(this).siblings('.nums').val(num);
+            // 点击左侧按钮时候，当前的商品后面的小计也要做相应的改变
+            // 把价格中的数字截取出来*数目，再赋值给小计，赋值时+"￥"。
+            var price = $(this).parents('.item-num').siblings('.item-price').text().substr(1);
+            // 计算结果，保留两位小数
+            var sum = (price * num).toFixed(2);
+            // 给他爹的兄弟赋值
+            $(this).parents('.item-num').siblings('.item-sum').html("￥" + sum);
+            getsum();
+            getPriceSum();
+
+        });
+
+
+        // 当用户在input件数，输入框中自定义输入数字时，也要修改小计
+        $(".item .nums").change(function() {
+            var num = $(this).val();
+            // 如果输入的数值小于1,先给它赋值为1,并把总价格赋值为单价
+            if (num < 1) {
+                $(this).val(1);
+                // 获取当前价格
+                var price = $(this).parents('.item-num').siblings('.item-price').text().substr(1);
+                // 给item后面的总价赋值.toFixed()方法前面必须是数字类型的才行
+                price = parseFloat(price);
+                $(this).parents('.item-num').siblings('.item-sum').text("￥" + (price).toFixed(2));
+                getsum();
+                getPriceSum();
+                return false;
+            }
+            // 获取价格值
+            var price = $(this).parents('.item-num').siblings('.item-price').text().substr(1);
+            // 计算结果，保留两位小数
+            var sum = (price * num).toFixed(2);
+            // 给他爹的兄弟赋值
+            $(this).parents('.item-num').siblings('.item-sum').text("￥" + sum);
+            getsum();
+            getPriceSum();
+        })
+
+
+        // 计算总计，当点击加号或减号，或更改input文本框时触发，因多次使用所以封装函数
+        function getsum() {
+            var sum = 0;
+            $(".item .nums").each(function(i, domele) {
+                    var num = 0;
+                    // $(domele).val()是字符型，需要转化为数值型
+                    num = parseInt($(domele).val());
+                    sum += num;
+
+                })
+                // 给总计里面的数目赋值
+            $(".footer-num span").text(sum);
+        }
+
+
+        // 计算总额,先获取当前item的商品数目*当前item的价格，再遍历相加，最后赋值，因多次使用所以封装函数
+        function getPriceSum() {
+            var priceSum = 0;
+            $(".item .nums").each(function(i, domele) {
+                // 获取当前元素的件数
+                var num = parseInt($(domele).val());
+                // 获取当前元素的价格
+                var price = parseFloat($(this).parents('.item-num').siblings('.item-price').text().substr(1));
+                priceSum += (num * price);
+
+            })
+            priceSum = priceSum.toFixed(2);
+            // 给总价赋值
+            $(".footer-sum").text('￥' + priceSum);
+
+        }
+
+
+        // 用户点击每个item后面的删除按钮时，删除当前item
+        $(".item .item-opration").click(function() {
+            $(this).parents(".item").remove();
+            isChecked();
+            getPriceSum();
+            getsum();
+        })
+
+
+        // 当点击footer里面的删除时，删除勾选前面复选框的item
+        $(" .footer-opration").click(function() {
+                // 判断每个item前面的复选框是否被选中，如果选中删除他所对应的item即可
+                $(".item #checkbox:checked").parents(".item").remove();
+                isChecked();
+                getPriceSum();
+                getsum();
+
+            })
+            // 如果内容区域的item的数目等于0，就取消全选按钮的选中状态
+        isChecked();
+
+        function isChecked() {
+            if ($(".item").length == 0) {
+                $(".select-all input").prop('checked', false);
+            }
+        }
+    })
+</script>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>风车梳理</title>
+    <style>
+        #wrap {
+            /*border:solid 1px #ccc;*/
+            height: 600px;
+            width: 1100px;
+            margin: 0 auto;
+            margin-top: 95px;
+            position: relative;
+            /*便于子元素位移*/
+        }
+        
+        #zhuzi {
+            /*柱子为梯形，回想边框模型可以知道设计原理*/
+            position: absolute;
+            left: 535px;
+            bottom: 0px;
+            width: 12px;
+            height: 0px;
+            border-width: 0px 25px 380px 25px;
+            border-style: none solid solid;
+            border-color: transparent transparent #996669 transparent;
+        }
+        
+        #zhou {
+            width: 50px;
+            height: 50px;
+            background: red;
+            position: absolute;
+            /*子元素的绝对定位会覆盖父元素*/
+            left: 541px;
+            top: 196px;
+            /*定义动画周期*/
+            animation: fengchezhuandong 3s;
+            /*设定转动次数为无限*/
+            animation-iteration-count: infinite;
+            /*定义转动速率为匀速*/
+            animation-timing-function: linear;
+        }
+        /*定义动画*/
+        
+        @keyframes fengchezhuandong {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        /*定义风车叶子基础模型*/
+        
+        .zhizhen {
+            width: 12px;
+            height: 4px;
+            position: absolute;
+            left: 25px;
+            top: 25px;
+            border-width: 0px 0px 125px 280px;
+            border-style: none none solid solid;
+            border-color: transparent transparent transparent blue;
+            transform-origin: 0 0;
+        }
+        /*分别定义风车叶子的初始位置和不同颜色以区分*/
+        /*z1不必定义即为基础模型即可，其他的叶子只需在基础模型的基础上旋转一定角度设置不同颜色即可*/
+        
+        .z2 {
+            transform: rotate(90deg);
+            border-color: transparent transparent transparent red;
+        }
+        
+        .z3 {
+            transform: rotate(180deg);
+            border-color: transparent transparent transparent purple;
+        }
+        
+        .z4 {
+            transform: rotate(270deg);
+            border-color: transparent transparent transparent yellow;
+        }
+        /*不同的风车叶子旋转时的中心设置为转轴，此轴与上面上面的轴是覆盖关系*/
+        
+        .zhuanzhou {
+            width: 50px;
+            height: 50px;
+            background: green;
+            position: absolute;
+            border-radius: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="zhuzi"></div>
+        <div id="zhou">
+            <div class="zhizhen z1"></div>
+            <div class="zhizhen z2"></div>
+            <div class="zhizhen z3"></div>
+            <div class="zhizhen z4"></div>
+            <div class="zhuanzhou"></div>
+        </div>
+    </div>
+</body>
+
+</html>

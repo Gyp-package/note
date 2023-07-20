@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body background="背景纯色.jpg">
+    <p>
+        <a href="https://www.bilibili.com/video/BV1i7411Z7d8?p=13">视频，《a href="链接，其中链接可以跳转"》声明链接《/a》</a> </p>
+    <p>
+        <a href="file:///C:/Users/%E5%86%B0%E5%9D%97%E6%B4%BE%E5%AF%B9/Documents/%E4%B9%A6%E5%8D%95/HTML5%20%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A.pdf">html书籍，a href="链接"，注意a是双目</a>
+    </p>
+    <a href="https://www.w3school.com.cn/html/html_links.asp" target="_blank">
+        <p>target属性设置为_blank链接会在新窗口中打开，跳出框架</p>
+        <!-- <img border="5" src="白发.jpg" />
+            <p>点击图片也会跳转链接，href后面接链接，border设置边框距离，src="图片。jpg" 是同一文件下图片的文件名称</p> -->
+    </a>
+    <p>
+        <a href="https://www.baidu.com/?tn=92363592_hao_pg" target="_blank">
+            <p>target属性，设置_blank会跳出框架</p>
+        </a>
+    </p>
+
+    </p>
+    <p><a href="#C3">查看Chapter 3</a></p>
+    <h2>Charpter 1</h2>
+    <p>nihao!</p>
+    <h2>Charpter 2</h2>
+    <p>hello!</p>
+    <h2>
+        <a name="C3">Charpter 3</a> </h2>
+    <p>使用锚,a name = "C3"与上面href="#C3"对应</p>
+    <p>链接朓到同一个页面的不同位置</p>
+    <h2>Charpter 4</h2>
+    <p>hello!</p>
+    <h2>Charpter 5</h2>
+    <p>hello!</p>
+    <h2>Charpter 6</h2>
+    <p>hello!</p>
+    <h2>Charpter 7</h2>
+    <p>hello!</p>
+    <h2>Charpter 8</h2>
+    <p>hello!</p>
+    <h2>Charpter 9</h2>
+    <p>hello!</p>
+    <h2>Charpter 10</h2>
+    <p>hello!</p>
+    <h2>Charpter 11</h2>
+    <p>hello!</p>
+    <p>下面是打开邮箱链接</p>
+    <a href="mailto:someone@microsoft.com?subject=Hello%20again">发送邮件</a><br/>
+    <p>这里的 使用<b>%20</b>替换单词之间的<b>空格</b></p>
+    <p>mailto:是收件人的邮箱，subject=是标题</p>
+    <a href="mailto:gyp@microsoft.com?cc=someniihao@microsoft.com&bcc=hehe@microsoft.com&subject=Nothing%20%20联系&body=You%20are%20so%20pretty!">带抄送给收件人的发送邮件！</a>
+    <br/><b>注意：</b>这里的cc是抄送，bcc是密件抄送，subject是主题，body是邮件内容，
+    <p>
+        静态图片：img 是空标签，意思是说，它只包含属性，并且没有闭合标签。
+        <br/> src="URL"URL 指存储图像的位置.
+        <img src="白发.jpg" width="200" height="200" alt="Dongman." /> </p>
+    <p> 武打动态
+        <img src="成龙武打.gif" width="200" height="100" />
+        <figcaption>Fig1. - The Pulpit Pock, Norway.</figcaption>
+        <!-- <figcaption> 元素定义标题 -->
+    </p>
+    <h2>未设置对齐方式的图像：</h2>
+    <p>图像
+        <img src="白发.jpg" width="200" height="200">没有align</p>
+    <h2>有align的设置对齐图像</h2>
+    <p>图像
+        <img src="白发.jpg" width="50" height="50" align="bottom">正常 对齐
+    </p>
+    <p>图像
+        <img src="白发.jpg " width="100" height="100" align="right">图像在最右侧 </p>
+    <p>图像
+        <img src="白.jpg " width="200" height="200" align="left" alt="白发动漫图片">图像在最左侧</p>
+
+    <!-- alt为无法显示的页面显示 -->
+    <p>bottom是默认的方式</p>
+    <p>
+        创建链接图像
+        <a href="https://www.csdn.net/">
+            <img border="0" src="周杰伦.jpg" width="100" height="200"> </a>
+    </p>
+    <img src="/i/eg_plants.jpg" border="0" usemap="#planetmap" alt="Planets" />
+    <map name="planetmap" id="planetmap">
+        <area
+        shape="circle"
+        coords="180,139,14"
+        href="/example/html/venus.html"
+        target="_blank"
+        alt="Venus"/>
+
+        <area
+        shape="circle"
+        coords="129,161,10"
+        href="/example/html/mercur.html"
+        target="_blank"
+        alt="Mercury"/>
+
+        <area
+        shape="rect"
+        coords="0,0,110,260"
+        href ="/example/html/sun.html"
+        target ="_blank"
+        alt="Sun" />
+    </map>
+    <h4>一列</h4>
+    <table border="1">
+        <tr>
+            <td>一个tr一行，一个td一个框</td>
+        </tr>
+    </table>
+    <table border="1">
+        <tr>
+            <td>td是一行中的元素100</td>
+            <td>这里有一个 tr</td>
+            <td>300</td>
+        </tr>
+    </table>
+    <table border="1">
+        <tr>
+            <td>
+                tr两个，第一行
+            </td>
+            <td>100</td>
+            <td>200</td>
+        </tr>
+        <tr>
+            <td>300</td>
+            <td>400</td>
+            <td>500</td>
+        </tr>
+    </table>
+    <h4>带有粗的边框</h4>
+    <table border="1">
+        <tr>
+            <th>heading</th>
+            <th>th是加粗的</th>
+            <th>可以用作表头</th>
+            <th>姓名</th>
+            <td>lisa</td>
+            <td>&nbsp;</td>
+            <td> & n b s p 是给空格加边</td>
+        </tr>
+        <tr>
+            <td>second</td>
+            <td>forth</td>
+        </tr>
+    </table>
+    <h4>带有更粗的边框</h4>
+    <table border="6">
+        <tr>
+            <td>111</td>
+            <td>td是一个元素</td>
+        </tr>
+        <tr>
+            <td>this is</td>
+            <td>lenovo hat</td>
+        </tr>
+    </table>
+    <table border="1">
+        <caption>这个是表格标题，caption</caption>
+        <tr>
+            <td>Some text</td>
+            <td>Some text</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>Some text</td>
+        </tr>
+    </table>
+    <table border="1">
+        <tr>
+            <th>姓名</th>
+            <th colspan="2">colspan表明下面一行对齐的元素个数</th>
+        </tr>
+        <tr>
+            <td>喜洋洋</td>
+            <td>美羊羊</td>
+            <td>沸羊羊</td>
+        </tr>
+    </table>
+    <h4>横跨两行的单元格</h4>
+    <table border="1">
+        <tr>
+            <th>姓名</th>
+            <td>喜洋洋</td>
+        </tr>
+        <tr>
+            <th rowspan="2">rowspan表有几行压缩，其他元素在下一行！电话</th>
+            <td>158128</td>
+        </tr>
+        <tr>
+            <td>990990</td>
+        </tr>
+    </table>
+    <table border="1">
+        <tr>
+            <td>
+                <p>这是一个段落</p>
+                <P>这个也是段落</P>
+            </td>
+            <td>
+                <p>这个元素有一个表格</p>
+                <table border="1">
+                    <tr>
+                        <td>A</td>
+                        <td>B</td>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                        <td>D</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>这个单元包含一个列表</p>
+                <ul>
+                    <li>ul做开头</li>
+                    <li>li是序号点点</li>
+                    <li>香蕉</li>
+                    <li>橘子</li>
+                </ul>
+            </td>
+            <td>HELLO</td>
+        </tr>
+    </table>
+    <h4>边框加上cellpadding 距离</h4>
+    <table border="1" cellpadding="10">
+        <tr>
+            <td>First</td>
+            <td>second</td>
+        </tr>
+        <tr>
+            <td>third</td>
+            <td>forth</td>
+        </tr>
+    </table>
+    <h4>边框没加距离cellpadding,没加cellspacing</h4>
+    <table border="1">
+        <tr>
+            <td>First</td>
+            <td>second</td>
+        </tr>
+        <tr>
+            <td>third</td>
+            <td>forth</td>
+        </tr>
+    </table>
+    <table border="1" cellspacing="10" background="小孩.jpeg" width="10">
+        <tr>
+            <th align="left">align是对齐</th>
+            <td align="right">B</td>
+            <td> background是背景颜色 </td>
+        </tr>
+        <tr>
+
+            <td background="小孩2.jpeg">C</td>
+            <td>D</td>
+        </tr>
+    </table>
+    <h4>边框加上cellpadding 距离</h4>
+    <table frame="box">
+        <caption>table frame="box"是盒子模型</caption>
+        <tr>
+            <td>First</td>
+            <td>second</td>
+        </tr>
+        <tr>
+            <td>third</td>
+            <td>forth</td>
+        </tr>
+    </table>
+    <table frame="above">
+        <caption>table frame="above"是上分割线</caption>
+        <tr>
+            <td>First</td>
+            <td>second</td>
+        </tr>
+        <tr>
+            <td>third</td>
+            <td>forth</td>
+        </tr>
+    </table>
+    <table frame="below">
+        <caption>table frame="below"是下分割线</caption>
+        <tr>
+            <td>First</td>
+            <td>second</td>
+        </tr>
+        <tr>
+            <td>third</td>
+            <td>forth</td>
+        </tr>
+    </table>
+    <table frame="hsides">
+        <caption>table frame="hesides"是上下分割线</caption>
+        <tr>
+            <td>First</td>
+            <td>second</td>
+        </tr>
+        <tr>
+            <td>third</td>
+            <td>forth</td>
+        </tr>
+    </table>
+    <table frame="vsides">
+        <caption>table frame="hesides"是左右分割线</caption>
+        <tr>
+            <td>First</td>
+            <td>second</td>
+        </tr>
+        <tr>
+            <td>third</td>
+            <td>forth</td>
+        </tr>
+    </table>
+</body>
+
+
+</html>

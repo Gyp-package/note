@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子模型</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .aa {
+            width: 200px;
+            height: 250px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: pink;
+            /* -虚线 dotted点线*/
+            /* 边框的复合; */
+            /* border: 1px solid red; */
+            border: 5px solid blue;
+            border-top: 5px solid red;
+            /* 边框的距离 会影响盒子的长和宽,padding 可能会撑大盒子边框*/
+            /* 盒子可能会撑大边框宽度，本身有宽度，需要手动减去边框，防止边框外溢  */
+            /* 块级元素和父亲一样宽 */
+            padding-left: 20px;
+            padding-top: 30px;
+        }
+        
+        table {
+            width: 500px;
+            height: 249px;
+        }
+        
+        th {
+            height: 35px;
+        }
+        
+        table,
+        td,
+        th {
+            border: 1px solid black;
+            /* 合并相邻的边框 border-collapse: collapse;*/
+            border-collapse: collapse;
+            font-size: 14px;
+            text-align: center;
+        }
+        
+        .pp {
+            width: 200px;
+            height: 300px;
+            background-color: yellow;
+        }
+        
+        div p {
+            padding: 30px;
+            background-color: blue;
+        }
+        
+        .o1,
+        .o2 {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /* 行内块元素水平居中给父元素添加text-center:center */
+            text-align: center;
+        }
+        
+        .o1 {
+            margin-bottom: 20px;
+            /* 等同于
+        .o2 {
+            margin-top:20px;
+        }  
+        下面是块级盒子居中 
+        同样 margin:auto;
+        margin: 0 auto;
+        */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .o2 {
+            margin: 0 auto;
+        }
+        
+        .ff {
+            width: 400px;
+            height: 400px;
+            background-color: yellow;
+            margin-top: 50px;
+            /* border: 1px solid transparent;
+            padding:1px; */
+            overflow: hidden;
+            border-radius: 50px;
+        }
+        
+        .ss {
+            width: 200px;
+            height: 100px;
+            background-color: greenyellow;
+            margin: 100px 100px;
+            /* border-radius: 100px;圆
+            border-radius:50px;高度设置一半是圆角矩形*/
+            border-radius: 50px;
+            /* border-radius:50%; */
+            text-indent: 2em;
+        }
+        
+        .gg {
+            width: 300px;
+            height: 200px;
+            border-radius: 10px 20px;
+            background-color: pink;
+            box-shadow: h-;
+        }
+        
+        .yy {
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            background-color: pink;
+        }
+        
+        .yy:hover {
+            box-shadow: 6px 6px 10px -2px rgb(0 0 0 / 30%);
+            text-shadow: 5px 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="盒子模型.png" alt="盒子模型" width="300px">
+    <img src="网页布局.png" alt="网页布局" width="400px"><br>
+    <div class="aa">
+        盒子模型包括：边框border, 外边距margin, 内边距padding, 内容content <br>
+        <img src="padding.png" alt="padding" width="600px"><br>
+    </div>
+    <table align="center" cellspacing="0">
+
+        <tr>
+            <th>排名</th>
+            <th>关键词</th>
+            <th>趋势</th>
+            <th>进入搜索</th>
+            <th>最近七天</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td><img src="上箭头.jpg" alt="上箭头"> 读书</td>
+            <td>全民</td>
+            <td><a href="#">书库</a></td>
+            <td>未看书</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><img src="上箭头.jpg" alt="上箭头"> 健身</td>
+            <td>男女</td>
+            <td><a href="#">老少</a></td>
+            <td>800米</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><img src="上箭头.jpg" alt="上箭头"> 旅游</td>
+            <td>放松</td>
+            <td><a href="#">出国</a></td>
+            <td>宅</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td><img src="上箭头.jpg" alt="上箭头"> 吃饭</td>
+            <td>每天</td>
+            <td><a href="#">干饭</a></td>
+            <td>按时</td>
+        </tr><br>
+        <div class="pp">
+            <p></p>
+        </div>
+        <div class="o1">
+            1.外边距margin，控制盒子之间的距离
+        </div>
+        <div class="o2">
+            2.块级盒子水平居中必须满足盒子指定宽度，左右外边距设置为auto <br>
+            <span>1.行内块元素居中对齐</span>
+            <span>2.添加text-align:center</span>
+            <img src="10蓝色气泡.png" alt="10蓝色气泡">
+        </div>
+        <div>
+            <img src="1.8外边距合并.png" alt="外边距合并" width="500px">
+        </div>
+        <div class="ff">
+            <!-- 父元素塌陷指给子元素设置边距高却加到父元素上,BFC问题 -->
+            <div class="ss">
+                嵌套边框父子合并。
+
+            </div>
+        </div>
+        <div>
+            <img src="解决塌陷.png" alt="解决塌陷" width="300px">
+        </div>
+        <div class="gg">
+            border-radius可以设置4个（从左上开始顺时针） <br> ，2个（左上右下一个对角，右上左下一个对角）， <br> 1个数值（4个角相等）<br>
+        </div>
+        <img src="盒子阴影.png" alt="盒子阴影" height="200px">
+        <div class="yy">
+            设置个盒子阴影。
+        </div>
+</body>
+
+</html>

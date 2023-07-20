@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    width: 300px;
+    color: rgb(125, 123, 133);
+    border: 1px solid rgb(218, 221, 218);
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.box h3 {
+    height: 32px;
+    text-indent: 1.5em;
+    /* padding-bottom: 5px; */
+    padding-left: 5px;
+    border-bottom: 1px dotted rgb(218, 221, 218);
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 32px;
+}
+
+.box li a {
+    display: block;
+    height: 23px;
+    line-height: 23px;
+    font-size: 12px;
+    color: #ccc;
+    text-decoration: none;
+    padding-left: 20px;
+}
+
+.box li a:hover {
+    text-decoration: underline;
+}
+
+.box ul {
+    margin-top: 7px;
+}
+
+
+/* 小米导航浮动 */
+
+
+/* 导航 */
+
+.box1 {
+    width: 1226px;
+    height: 460px;
+    margin: 0 auto;
+}
+
+.nav {
+    float: left;
+    width: 234px;
+    height: 460px;
+    color: #fff;
+    background: rgba(105, 101, 101, .6);
+    /* padding: 20px 0; */
+}
+
+.nav li a {
+    color: #fff;
+}
+
+.nav li {
+    width: 234px;
+    height: 42px;
+    padding: 0 0 0 30px;
+}
+
+.nav ul .fir {
+    padding: 20px 0 0 0;
+}
+
+.nav ul .las {
+    padding: 0 0 20px 0;
+}
+
+.nav a:hover {
+    background-color: rgb(255, 103, 0);
+}
+
+
+/* 图片 */
+
+.box1 .pic {
+    float: left;
+    width: 992px;
+    height: 42px;
+}
+
+
+/* 商品们间隔布局 */
+
+.box2 {
+    width: 1226px;
+    height: 285px;
+    background-color: pink;
+    margin: 0 auto;
+}
+
+.box2 li {
+    float: left;
+    width: 296px;
+    height: 285px;
+    background-color: green;
+    margin-right: 14px;
+}
+
+.box2 li.last {
+    margin-right: 0;
+}
+
+
+/* 左右(上下) */
+
+.box3 {
+    width: 1226px;
+    height: 615px;
+    background-color: pink;
+    margin: 0 auto;
+}
+
+.box3 .left {
+    float: left;
+    width: 234px;
+    height: 615px;
+    background-color: yellow;
+}
+
+.box3 .right {
+    float: left;
+    width: 992px;
+    height: 615px;
+    background-color: purple;
+}
+
+.box3>.right div {
+    width: 234px;
+    height: 300px;
+    float: left;
+    background-color: pink;
+    margin-left: 14px;
+    margin-bottom: 14px;
+}
+
+
+/* 第三种布局 */
+
+.box4 {
+    height: 1000px;
+}
+
+.box4 .header {
+    height: 100px;
+    background-color: skyblue;
+}
+
+.box4 .banner {
+    height: 100px;
+    width: 800px;
+    margin: auto;
+    margin-top: 10px;
+    background-color: blue;
+}
+
+.box4 .content {
+    width: 800px;
+    height: 750px;
+    background-color: green;
+    margin: 10px auto;
+}
+
+.box4 .content .up {
+    height: 250px;
+    background-color: skyblue;
+}
+
+.box4 .content .up li {
+    width: 175px;
+    height: 250px;
+    background-color: rgb(128, 0, 111);
+    margin-right: 33px;
+    float: left;
+}
+
+.box4 .content .up li.last1 {
+    margin-right: 0;
+}
+
+.box4 .content .down {
+    height: 500px;
+    margin-top: 10px;
+    background-color: red;
+}
+
+.box4 .content .down li {
+    width: 175px;
+    height: 500px;
+    background-color: rgb(128, 0, 111);
+    margin-right: 33px;
+    float: left;
+}
+
+.box4 .content .down li.last2 {
+    margin-right: 0;
+}
+
+.footer {
+    height: 100px;
+    background-color: pink;
+}

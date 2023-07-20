@@ -1,0 +1,214 @@
+* {
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+.one {
+    position: absolute;
+    width: 1000px;
+    height: 120px;
+    /* background-color: pink; */
+}
+
+.logo {
+    float: left;
+    /* position: absolute; */
+    display: inline-block;
+    width: 300px;
+    height: 115px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgb(255, 136, 136);
+    text-align: center;
+}
+
+.you {
+    float: left;
+    width: 700px;
+    height: 120px;
+    background-color: yellow;
+}
+
+.en {
+    /* display: block; */
+    width: 100px;
+    height: 55px;
+    font-size: 15px;
+    float: right;
+    text-align: center;
+    background-color: rgb(238, 255, 187);
+    margin-bottom: 5px;
+}
+
+.dao {
+    /* position: absolute; */
+    width: 700px;
+    height: 55px;
+    float: left;
+    background-color: rgb(238, 255, 187);
+    /* display: inline-block;  */
+    /* float: right; */
+}
+
+.two {
+    width: 1000px;
+    height: 455px;
+    background-color: green;
+}
+
+.zuo {
+    float: left;
+    width: 350px;
+    height: 455px;
+    line-height: 455px;
+    background-color: rgb(255, 238, 153);
+    text-align: center;
+}
+
+.hezi {
+    position: relative;
+    float: left;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border: 1px solid black;
+    animation-name: example;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    transition: background-color 5s, width 5s, height 5s;
+    transition-timing-function: linear;
+}
+
+@keyframes example {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.zuo .hezi:hover {
+    background-color: red;
+    width: 200px;
+    height: 200px;
+}
+
+.zuo .hezi:hover .hezi1::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border: 50px solid pink;
+    border-top: 50px solid transparent;
+    border-left: 50px solid transparent;
+    transition: all 5s;
+}
+
+.two .zuo .hezi .hezi1 {
+    position: relative;
+    float: left;
+    width: 50%;
+    height: 50%;
+    border: 1px solid black;
+}
+
+.hezi1::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border: 25px solid pink;
+    border-top: 25px solid transparent;
+    border-left: 25px solid transparent;
+}
+
+.h1::after {
+    top: -50px;
+}
+
+.h2::after {
+    transform: rotate(90deg);
+    left: 50px;
+}
+
+.h4::after {
+    transform: rotate(180deg);
+    top: 50px;
+}
+
+.h3::after {
+    right: 50px;
+}
+
+*/
+/* .sanjiao1 {
+    width: 0;
+    height: 0;
+    border: 50px solid pink;
+    border-top: 50px solid transparent;
+    border-left: 50px solid transparent;
+}
+
+.you1 {
+    /* position: absolute; */
+
+float: left;
+width: 650px;
+height: 455px;
+background-color: rgb(240, 128, 128);
+
+}
+.youdezuo {
+    width: 380px;
+    height: 455px;
+    background-color: #fff;
+}
+.zuoshang {
+    float: left;
+    margin: 5px;
+    width: 370px;
+    height: 270px;
+    background-color: rgb(170, 255, 238);
+}
+.zuoxia {
+    float: left;
+    margin: 5px;
+    width: 370px;
+    height: 170px;
+    background-color: rgb(170, 255, 238);
+}
+
+/* .youone {
+    float: left;
+    width: 75px;
+    height: 455px;
+    background-color: black;
+} */
+.three {
+    /* float: left; */
+    
+    width: 1000px;
+    height: 40px;
+    background-color: skyblue;
+}
+.ce {
+    background-color: pink;
+}
+ul {
+    display: flex;
+    width: 250px;
+    height: 400px;
+    flex-direction: column;
+    align-items: center;
+}
+li {
+    flex: 1;
+    position: relative;
+    display: inline-block;
+}

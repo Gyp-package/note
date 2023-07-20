@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.box1 {
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    /*  transition-property 选择属性以及 transition-duration 执行时间 */
+    transition: width 2s, height 2s, transform 2s;
+    /*transition-delay 延迟 */
+    transition-delay: 1s;
+}
+
+.box1:hover {
+    width: 500px;
+    height: 500px;
+    /* transition-timing-function 执行时间快慢 */
+    transition-timing-function: ease-in-out;
+    /* transform 旋转角度 */
+    transform: rotate(180deg);
+}
+
+.box2 {
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    /* 将 "example" 动画绑定到 <div> 元素 */
+    animation-name: example;
+    /* 多长时间才能完成动画 */
+    animation-duration: 4s;
+    /* animation-delay 属性规定动画开始的延迟时间。 */
+    /* animation-iteration-count 属性指定动画应运行的次数。 "infinite" 使动画永远持续 */
+    /* animation-direction 属性指定是向前播放、向后播放还是交替播放动画。 */
+    /* animation-timing-function 属性规定动画的速度曲线。 */
+    /* animation-fill-mode：backwards； 属性规定目标元素的保留样式。 */
+}
+
+@keyframes example {
+    /* ① 两种颜色变换 */
+    /* from {
+        background-color: red;
+    }
+    to {
+        background-color: blue;
+    } */
+    /* ② 4种颜色变换 */
+    0% {
+        background-color: red;
+    }
+    25% {
+        background-color: yellow;
+    }
+    50% {
+        background-color: blue;
+    }
+    100% {
+        background-color: green;
+    }
+}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}

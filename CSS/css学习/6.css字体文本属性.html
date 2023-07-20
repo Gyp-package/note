@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初试css</title>
+    <style>
+        /* 标签选择器 */
+        
+        body {
+            background-color: azure;
+        }
+        
+        h1 {
+            color: white;
+            text-align: center;
+        }
+        
+        p {
+            color: aqua;
+            font-family: Verdana;
+            font-weight: 20px;
+        }
+        
+        div>p {
+            background-color: yellow;
+            font-weight: bold;
+        }
+        /* 类选择器 */
+        
+        .chang {
+            width: 100px;
+            height: 100px;
+        }
+        
+        .red {
+            color: blue;
+            font-size: 30px;
+        }
+        
+        .beijing {
+            background-color: blueviolet;
+        }
+        
+        ·
+        /* id选择器 */
+        
+        #hehe {
+            color: pink;
+        }
+        /* 通配符选择器 */
+        
+        * {
+            color: black;
+        }
+        
+        h4 {
+            /* font-family: 'Microsoft YaHei'; */
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+        .style {
+            font-weight: 700;
+            font-style: italic;
+            color: black;
+        }
+        
+        em {
+            font-style: normal;
+        }
+        
+        .font {
+            /* font-style: italic; 倾斜
+            font-weight: 700; 加粗，400是不加粗
+            font-size: 16px;            
+            font-family: '微软雅黑'; */
+            /* 复合属性：font:font-family font-weight font-size/line-height font-family大小和字体必须有 */
+            font: italic 700 16px '微软雅黑';
+        }
+        
+        div {
+            /* color: deeppink;*/
+            color: #c0f;
+            /* color: rgb(red, green, blue) 颜色*/
+            text-align: left;
+            /* 本质是让h1中盒子文字水平居中对齐 */
+            text-decoration: line-through;
+            /* 文本装饰 none取消下划线,underline添加,overline上划线,line-through删除线 */
+            text-indent: 2em;
+            /* 文本首行段落缩进,em是特定文字单位 */
+            line-height: 36px;
+            /* 行高：上下间距以及文本高度 */
+        }
+        /* css的三种样式表：
+        行内样式表，写到html页面内部的style标签中，在body内使用style引入属性行内引用
+        内部样式表（嵌入式）
+        外部样式表（链接式），单独写到css，之后把css文件引入HTMML页面中使用：
+         */
+        
+        body {
+            font: 16px/28px 'Microsoft YaHei';
+        }
+    </style>
+    <link rel="stylesheet" href="1.style.css">
+</head>
+
+<body>
+    <div>文本颜色,好好学习，天天向上</div>
+    <h4>设置字体</h4>
+    <!-- id选择器 #定义，id调用，只能调用一次，,类选择器可以多次调用， -->
+    <div id="hehe">粉色</div>
+    <div class="chang red">蓝色</div>
+    <div class="chang beijing">背景紫色</div>
+    <h1>初试css</h1>
+    <p>段落这是一个段落这是一个段落</p>
+    <div>
+        <p>这是一个段落</p>
+        <section>
+            <p>这是2个段落</p>
+        </section>
+        <p>这是3个段落</p>
+    </div>
+    <p>这是4个段落</p>
+    <p>这5个段落</p>
+    <table width="500" border="1">
+        <tr>
+            <td class="red">性别：</td>
+            <td>
+                <input type="radio" name="sex" id="nan"><label for="nan"><img src="man.jpg" width="20px" ; height="20px" /> 男</label><br>
+                <input type="radio" name="sex" id="nv"><label for="nv"><img src="woman.jpg" width="20px" ; height="20px" /> 女</label><br>
+            </td>
+        </tr>
+        <tr>
+            <td>生日：</td>
+            <td>
+                <select>
+                    <option>--请选择年份--</option>
+                    <option>2001</option>
+                    <option>2002</option>
+                    <option>2003</option>
+                </select>
+                <form>
+                    <input type="date" min="1979-12-31" max="2023-01-02">
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>属性：</td>
+            <td><input type="text" name="caonima" value="菜狗"></td>
+        </tr>
+        <tr>
+            <td>婚姻状况：</td>
+            <td>
+                <input type="radio" name="marry" id="danshen" checked="checked"><label for="danshen">  单身 </label>
+                <input type="radio" name="marry" id="youduixiang"><label for="youduixiang">有对象</label>
+            </td>
+        </tr>
+        <tr>
+            <td>学历：</td>
+            <td>
+                <input type="text" value="清华">
+            </td>
+        </tr>
+        <tr>
+            <td>喜欢的类型：</td>
+            <td><input type="checkbox" name="tian">甜
+                <input type="checkbox" name="ku">酷
+                <input type="checkbox" name="cute" checked="checked">可爱
+            </td>
+
+        </tr>
+        <tr>
+            <td>个人介绍</td>
+            <td>
+                <textarea>个人简介</textarea>
+            </td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td>
+                <input type="submit" value="免费注册">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="checkbox" checked="checked">同意注册协议
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <a href="#">会员登录</a>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <h4>承诺书</h4>
+                <ol>
+                    <li>诚信</li>
+                    <li>友爱</li>
+                    <li>互助</li>
+                </ol>
+
+            </td>
+        </tr>
+    </table>
+    <!-- 字体样式粗细，类型3 -->
+    <p class="style">
+        我需要学的更多！！！
+
+    </p>
+    <em>倾斜字体！</em>
+    <!-- 字体复合属性 -->
+    <div>
+        三生三世十里桃花。
+    </div>
+</body>
+
+</html>

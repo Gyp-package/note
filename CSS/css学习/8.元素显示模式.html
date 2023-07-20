@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            width: 300px;
+            height: 50px;
+            background-color: pink;
+            display: block;
+            /* 将行内元素a（不可设置长宽）,转化为块级元素 */
+        }
+        
+        .pp {
+            width: 200px;
+            height: 50px;
+            background-color: yellow;
+            display: inline;
+            /* 块级元素转化为行内元素， */
+        }
+        
+        .oo {
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+            display: inline-block;
+            /* 行内元素转化为行内块元素
+        display:inline-block;<b>长宽设置有效 */
+        }
+        
+        .sos {
+            width: 300px;
+            height: 300px;
+            /* 背景图片不能落下url ,默认背景 平铺*/
+            /* background-color: pink; */
+            background-image: url(搜索框.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            /* 跟顺序没有关系，第二个一般默认居中 */
+        }
+        
+        h3 {
+            /* width: 118px;
+            height: 40px;*/
+            width: 200px;
+            /* background-color: pink; */
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 40px;
+            background-image: url(小破站.png);
+            background-repeat: no-repeat;
+            background-position: left center;
+            text-indent: 5em;
+        }
+        
+        body {
+            /* color: aliceblue;
+            background-image: url(海边动漫.jpg);
+            background-repeat: no-repeat;
+            background-position: center 40px;
+            background-attachment: fixed; */
+            /* 背景图片对齐集中，如果跟精确位置或混合单位，则x,y位置有顺序 */
+            /* 视觉滚动默认不滚stroll */
+            /* 复合：无所谓顺序 ，中间空格隔开*/
+            color: aliceblue;
+            background: white url(海边动漫.jpg) no-repeat fixed center top;
+        }
+        
+        .op {
+            /* 盒子背景色透明度 */
+            background: rgba(0, 0, 0, .5);
+        }
+        
+        .oppo {
+            color: pink;
+            font: 24px/36px'微软雅黑';
+            /* 12px/24px是字体12，行高24 */
+            /* font: 12px/1.5 '微软雅黑'; */
+            /* 子元素是父元素的1.5倍，行高也符合 */
+            /* 另一种行高表示是21 = 1.5 * 14   font:12px/1.5;  font-size:14px; */
+        }
+        
+        p {
+            color: antiquewhite;
+        }
+        
+        .test {
+            color: pink!important;
+        }
+        
+        #demo {
+            color: brown;
+        }
+        
+        li {
+            color: red;
+        }
+        
+        .hh li {
+            color: pink;
+        }
+        
+        .hh .ll {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="元素的显示.png" alt="元素显示模式" width="500px">
+    <div>
+        元素显示模式分为块元素div 和 行内元素span,<br>
+        <img src="块元素.png" alt="块元素" width="400px"><br> p里边不能放div<br> 文字类元素内不能使用块元素
+        <br>
+    </div>
+    <span>行内元素，<br>
+    一行内可以有多个行内元素<br>
+    宽高设置无效，默认宽度是自身宽度，a内不可以再放链接，但是可以再放块级元素<br>
+    行内块元素img,input,td,特点：<br>
+    <img src="QQ行内块元素.png" alt="行内块元素"width="600px"><br>
+
+    </span>
+    <strong>display转换</strong>
+    <p>
+        display , block 转化为块级元素，<br>
+        <a href="#">display:block将行内元素a（不可设置长宽）,转化为块级元素，<b>可以设置长宽，</b></a><br>
+    </p>
+    <div class="pp">
+        块级元素转化为行内元素， display:inline;,<b>长宽设置无效</b><br>
+    </div>
+    <span class="oo">  
+        行内元素转化为行内块元素
+        display:inline-block;<b>长宽设置有效</b>
+    </span>
+    <p>文字垂直居中，0.3文字侧栏应用<br>
+    </p>
+    <div class="sos">css背景<br> background-color:transparent(透明);<br> 背景图片：logo.小的装饰性图片， <br>便于控制位置，
+        <br> 背景平铺 repeat | no-repeat |<br> repeat-x | repeat-y <br> 背景图片位置background-position: x y ;<br>
+
+    </div>
+    <h3>
+        健康成长好好学习
+    </h3>
+    <div class="op">
+        背景位置background-position，<br> 以及背景视差滚动background-attachment:scroll || fixed。<br>
+        <img src="复合背景.jpg" alt="复合背景" width="500px"><br> 背景颜色半透明background: rgba(0,0,0,0.3)<br>意思是red,green,blue,alpha透明度范围0-1<br>
+    </div>
+    <div class="oppo">
+        层叠性，只折叠相同的样式；<br> 继承性：子继承父业，主要是元素样式，text-,font-,line-,以及color属性
+        <br>优先级： 根据选择器权重显示<br>
+        <img src="优先级.png" alt="优先级" width="500px">
+        <p class="test" id="demo" style="color:blueviolet">
+            优先级显示颜色 ,继承的权重是0 <br> 权重叠加，使用优先级，有叠加但是不会有进位<br> 计算权重
+            <br>
+        </p>
+    </div>
+    <ul class="hh">
+        <li class="ll">111</li>
+        <li style="color:blue">222</li>
+        <li>333</li>
+        <li>444</li>
+    </ul>
+
+</body>
+
+</html>

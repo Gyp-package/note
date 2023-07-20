@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="./0.10属性.css">
+    <title>属性</title>
+</head>
+
+<body>
+    <h1>Create an HTML Form</h1>
+    <div>
+        <!-- <table>
+            <form action=""></form>
+        </table> -->
+        <form action="action_page.php">
+            <fieldset>
+                <legend>Personal information:</legend>
+                First name:<br>
+                <input type="text" name="firstname" value="Mickey">
+                <br> Last name:<br>
+                <input type="text" name="lastname" value="Mouse">
+                <br><br>
+                <input type="submit" value="Submit"></fieldset>
+        </form>
+    </div>
+    <div>
+        <select name="cars">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+            </select>
+    </div>
+    <div>
+        <textarea name="message" rows="10" cols="30">
+            The cat was playing in the garden.
+            </textarea>
+    </div>
+    <div>
+        <form action="action_page.php">
+            <input list="browsers">
+            <datalist id="browsers">
+               <option value="Internet Explorer">
+               <option value="Firefox">
+               <option value="Chrome">
+               <option value="Opera">
+               <option value="Safari">
+            </datalist>
+        </form>
+    </div>
+    <br>
+    <form action="action_page.php">
+        User name:<br>
+        <input type="text" name="username">
+        <br> User password:<br>
+        <input type="password" name="psw"><br> Quantity(between 1 and 5):
+        <input type="number" name="quality" min="1" max="5">
+    </form>
+    </div>
+    <div>
+        <form>
+            Enter a date before 1980-01-01:
+            <input type="date" name="bday" max="1979-12-31"><br> Enter a date after 2000-01-01:
+            <input type="date" name="bday" min="2000-01-02"><br>
+        </form>
+    </div>
+    <div>
+        <form>
+            Add your homepage:
+            <input type="url" name="homepage">
+        </form>
+    </div>
+    <div class="header">
+        <h1>Header.</h1>
+    </div>
+    <div class="topnav">
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+    </div>
+    <div class="row">
+        <div class="column">
+            <h2>这是第一段 </h2>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="column">
+            <h2>这是第二段</h2>
+            <p> Maecenas sit amet pretium urna. </p>
+        </div>
+        <div class="column">
+            <h2>这是第三段</h2>
+            <p> Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. </p>
+        </div>
+    </div>
+    <h1 class="aa">translate</h1>
+    <p>translate() 方法从元素当前位置对其进行移动：</p>
+    <div class="pp">
+        该 div 元素从其当前位置向右移动 50 个像素，并向下移动 100 个像素。
+    </div>
+    <br><br><br>
+    <div class="ro" id="rotate2D" style="transform: rotate(360deg);">2D rotate </div><br><br><br>
+    <div class="tooltip">看我
+        <span class="tooltiptext">工具提示文本</span>
+    </div>
+    <p>武侠</p>
+    等腰箭头向上
+    <div id="sanjiao1"> </div>
+    <br> 等腰箭头向右
+    <div id="sanjiao2"> </div>
+    <br> 等腰箭头向下
+    <div id="sanjiao3"> </div>
+    <br> 等腰箭头向左
+    <div id="sanjiao4"> </div>
+    <br> 直角箭头左上
+    <div id="sanjiao5"> </div>
+    <br> 直角箭头右下
+    <div id="sanjiao6"> </div><br>
+</body>
+
+</html>

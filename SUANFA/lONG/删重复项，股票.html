@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>删除重复项</title>
+    <script>
+        // 做法1：创建数组
+        function del(nums) {
+            let expectedNums = [];
+            for (let i = 0; i < nums.length; i++) {
+                if (expectedNums.indexOf(nums[i]) == -1) {
+                    expectedNums.push(nums[i]);
+                }
+            }
+            console.log(expectedNums.length);
+            return expectedNums;
+        }
+        let nums1 = del([1, 1, 2]);
+        console.log(nums1);
+        // 做法2：双指针,返回数组长度
+        function removeDuplicates(nums) {
+            let left = 0,
+                right = 0;
+            for (right = 0; right < nums.length; right++) {
+                if (nums[left] != nums[right]) {
+                    nums[++left] = nums[right];
+                }
+            }
+            return ++left;
+        }
+        console.log(removeDuplicates([0, 0, 1, 1, 2, 2, 3, 3, 4]));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

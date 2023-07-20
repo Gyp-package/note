@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>微博发布</title>
+    <style>
+        .weibo {
+            display: block;
+            margin: 20px auto;
+            width: 560px;
+            border: 2px solid #ff0000;
+        }
+        
+        .text {
+            margin-top: 20px;
+        }
+        
+        ul {
+            width: 360px;
+            padding-left: 100px;
+        }
+        
+        ul li {
+            list-style-type: none;
+            line-height: 40px;
+            border-bottom: 1px dashed #b6b6b6;
+            display: none;
+        }
+        
+        ul li a {
+            float: right;
+            width: 50px;
+            height: 30px;
+            background-color: #ff0000;
+            color: #FFFFFF;
+            text-align: center;
+            line-height: 30px;
+        }
+        
+        .btn {
+            width: 50px;
+            height: 25px;
+            font-size: 15px;
+        }
+    </style>
+    <script src="./jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="box" id="weibo">
+        <span>
+            微博发布
+        </span>
+        <textarea name="" class="text" id="" cols="30" rows="10"></textarea>
+        <button class="btn">发布</button>
+        <ul> </ul>
+    </div>
+    <script>
+        $(".btn").on("click", function() {
+            let li = $("<li></li>");
+            li.html($(".text").val() + "<a href = 'javascript: ;'>删除</a>");
+            $("ul").prepend(li)
+                // $("textarea").val("li").
+            li.slideDown(); //滑动效果
+            $(".text").val("") //清空
+        })
+        $("ul").on("click", "a", function() {
+            $(this).parent().slideUp() {
+                $(this).remove();
+            }
+        })
+    </script>
+</body>
+
+</html>

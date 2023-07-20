@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>折叠卡片</title>
+    <style>
+        .king-box {
+            background: url("./images/bg.png") no-repeat;
+            width: 872px;
+            height: 89px;
+            margin: 200px auto;
+        }
+        
+        .small {
+            width: 69px;
+            height: 69px;
+            display: block;
+            /*默认小的图片显示*/
+        }
+        /*1.调整大小对应图片的大小*/
+        /*2.默认第一个有current类的才显示big，其余没有的仅仅显示small，隐藏big，已实现后半句话~*/
+        
+        .big {
+            width: 224px;
+            height: 69px;
+            display: none;
+            /*display: block;会看到均处于li的最左边??? 不，small的定位与big无关，small定位依据的li，而非big*/
+            /*默认大的图片隐藏*/
+        }
+        
+        .king-box ul {
+            height: 89px;
+            padding-top: 10px;
+            /*把整个ul中的所有li均挤下来，要不位置不对不好看*/
+        }
+        
+        .king-box li {
+            float: left;
+            list-style: none;
+        }
+        /*默认第一个有current类的li内部才显示big，其余没有的仅仅显示small，隐藏big*/
+        /*3.接下来实现前半句话，为第一个添加类，使big显示，small隐藏*/
+        
+        li.current .big {
+            display: block;
+        }
+        /*已实现前半句话*/
+        
+        li.current .small {
+            display: none;
+            /*    display:block; 测试为什么要给.samll 加 poa用*/
+        }
+        /*4.将小图片依据li定位到left0 top0上，为什么必须给小图.samll开poa定位？？
+———>目的就是因为每个img均为块，经测试发现如果不给其中一个设置poa脱离文档流，两个img同时有大图片.big就会掉下来*/
+        
+        .king-box li .small {
+            position: absolute;
+            /*设置定位后，必须给small自身宽高！！，为元素设置position时，如果没有为其设置宽、高，则值默认为0*/
+            left: 0px;
+            height: 0px;
+            width: 69px;
+            height: 69px;
+        }
+        
+        .king-box li {
+            position: relative;
+            /*为li设置por，子绝父项，大图是其sib（兄弟）*/
+            /*脱离浮动了，必须给li一个宽高，否则图片不显示，因为内部的图片是依据li定位的，li都没了，没发定位，就消失了*/
+            width: 69px;
+            height: 69px;
+        }
+        
+        .king-box li.current {
+            width: 224px;
+        }
+    </style>
+    <script src="./jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div class="king-box">
+        <ul>
+            <li class="current">
+                <img src="./1.jpeg" alt="" class="small">
+                <img src="./3.jpg" alt="" class="big">
+            </li>
+            <li>
+                <img src="./1.jpeg" alt="" class="small">
+                <img src="./3.jpg" alt="" class="big">
+            </li>
+            <li>
+                <img src="./1.jpeg" alt="" class="small">
+                <img src="./3.jpg" alt="" class="big">
+            </li>
+            <li>
+                <img src="./1.jpeg" alt="" class="small">
+                <img src="./3.jpg" alt="" class="big">
+            </li>
+            <li>
+                <img src="./1.jpeg" alt="" class="small">
+                <img src="./3.jpg" alt="" class="big">
+            </li>
+            <li>
+                <img src="./1.jpeg" alt="" class="small">
+                <img src="./3.jpg" alt="" class="big">
+            </li>
+            <li>
+                <img src="./1.jpeg" alt="" class="small">
+                <img src="./3.jpg" alt="" class="big">
+            </li>
+        </ul>
+    </div>
+    <script>
+        $(function() {
+            // console.log($(".bigbox>ul li"));
+            //获取到li元素，注册一个鼠标经过事件
+            $(".king-box>ul li").mouseenter(function() {
+                //   console.log(this);
+                //为当前经过的这个li创建一个自定义动画效果，在动画效果前加上stop()之前我们讲过
+                //是为了停止上一层动画，直接执行当前动画，防止出现动画排队执行的bug
+                $(this).stop().animate({
+                    width: 224
+                        //当前元素中子代类名为small的元素淡出，其兄弟元素淡入
+                        //经过当前li，让当前li的小图片淡出，大图片淡入
+                }).find(".small").stop().fadeOut().siblings(".big").stop().fadeIn();
+                //当前元素的所有li兄弟的元素执行动画
+                $(this).siblings("li").stop().animate({
+                    width: 69
+                        //经过当前li，让当前li的所有兄弟元素的小图片淡入，大图片淡出
+                        //指定的子代元素中类名为small的元素淡入，其兄弟元素淡出
+                }).find(".small").stop().fadeIn().siblings(".big").stop().fadeOut();
+            })
+        })
+    </script>
+</body>
+
+</html>

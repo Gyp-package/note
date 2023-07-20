@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过渡</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .bar {
+            margin: 5px;
+            display: inline-block;
+            width: 150px;
+            height: 15px;
+            border: 1px solid red;
+            border-radius: 8px;
+            padding: 1px;
+        }
+        
+        .bar_in {
+            width: 87%;
+            height: 100%;
+            background-color: red;
+            transition: all .5s;
+        }
+        /* .bar:hover .bar_in {
+            transition: all .5s;
+            width: 87%;
+        } */
+        
+        span {
+            font-style: 12px;
+            color: rgb(253, 84, 71);
+        }
+    </style>
+</head>
+
+<body>
+
+
+    已售 <span>87%</span>
+    <div class="bar">
+        <div class="bar_in"></div>
+    </div>
+    剩余 <span>29</span> 件
+
+</body>
+
+</html>

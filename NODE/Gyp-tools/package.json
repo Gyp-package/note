@@ -1,0 +1,30 @@
+{
+
+    "name": "gyp-tools",
+
+    "version": "1.0.0",
+
+    "main": "index.js",
+
+    "description": "提供了格式时间,HTMLEscape相关的功能",
+
+    "keywords": [
+
+        "gyp",
+
+        "dateFormat",
+
+        "escape"
+
+    ],
+
+    "liscense": "ISC",
+
+    "dependencies": {
+
+        "express": "^4.17.1"
+
+    }
+
+}
+

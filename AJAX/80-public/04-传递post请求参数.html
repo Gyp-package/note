@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .end {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #233;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        姓名：<input type="text" id="username">
+    </p>
+    <p>
+        年龄：<input type="text" id="age">
+    </p>
+    <p>
+        <input type="button" value="提交" id="btn">
+    </p>
+    <p class="end"> </p>
+    <script type="text/javascript">
+        let btn = document.getElementById('btn');
+        let username = document.getElementById('username');
+        let age = document.getElementById('age');
+        let end = document.querySelector('.end');
+        // axios.defaults.baseURL = 'http://localhost:3000'
+
+        btn.addEventListener('click', function() {
+            let xhr = new XMLHttpRequest();
+            let nameValue = username.value;
+            let ageValue = age.value;
+            // get请求方式需要手动拼接请求参数
+            let params = '?username=' + nameValue + '&age=' + ageValue;
+            xhr.open('post', 'http://localhost:3000/post');
+            // xhr.open('get', 'http://localhost:3000/get')
+            // post设置请求头信息   
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.send(params);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        end.innerHTML = xhr.responseText;
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

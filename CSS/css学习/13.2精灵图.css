@@ -1,0 +1,24 @@
+/* 字体声明 */
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.eot?4d6wqq');
+    src: url('fonts/icomoon.eot?4d6wqq#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?4d6wqq') format('truetype'), url('fonts/icomoon.woff?4d6wqq') format('woff'), url('fonts/icomoon.svg?4d6wqq#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+span {
+    font-family: 'icomoon';
+}
+
+
+/* 选择字体结束 */
+
+.box {
+    width: 26px;
+    height: 13px;
+    /* background-color: pink; */
+    background: url(./图片库/A15网易头部精灵图.png) no-repeat -192px 0;
+}

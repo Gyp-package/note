@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>空间交叉</title>
+    <style>
+        body {
+            perspective: 500px;
+            /* 算是父级，继承性 */
+        }
+        
+        .box {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            transition: all 0.2s;
+            transform-style: preserve-3d;
+        }
+        
+        .box:hover {
+            transform: rotateY(60deg);
+            /* 需要呈现3d效果 */
+        }
+        
+        .box div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: pink;
+        }
+        
+        .box div:last-child {
+            background-color: purple;
+            transform: rotateX(60deg);
+            transform-style: preserve-3d;
+        }
+        
+        .box div:last-child {
+            background-color: purple;
+            transform: rotateX(60deg);
+            /* 要透视才能显示 */
+            transform-style: preserve-3d;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div></div>
+        <div>
+            transform-style
+        </div>
+    </div>
+</body>
+
+</html>

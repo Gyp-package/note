@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    background-color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+
+/* 导航 */
+
+.topnav {
+    overflow: hidden;
+    background-color: pink;
+    width: 100%;
+    height: 100px;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    line-height: 100px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    /* box-sizing: border-box; */
+    padding: 14px 16px;
+}
+
+.topnav a:hover {
+    background-color: skyblue;
+    color: black;
+}
+
+
+/* 创建并排的三个非等列 */
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 15px;
+}
+
+
+/* 清除列之后的浮动 */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* 响应式布局 - 创建堆叠而非并排的三列 */
+
+@media screen and (max-width:600px) {
+    .column {
+        width: 100%;
+    }
+}
+
+.pp {
+    width: 300px;
+    height: 100px;
+    background-color: pink;
+    border: 1px solid black;
+    transform: translate(50px, 50px);
+}
+
+.ro {
+    width: 80px;
+    height: 70px;
+    color: white;
+    position: relative;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 10px;
+    float: left;
+    margin-right: 50px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    background: red;
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+.ro:hover {
+    transform: rotate(180deg);
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    /* 定位工具提示 */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 105%;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+
+/* @keyframes example {
+    form {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
+    }
+} */
+
+#sanjiao1 {
+    /* width: 0px;
+    height: 0px;
+    background-color: skyblue;
+    border-bottom: 100px solid syan;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent; */
+    width: 0;
+    height: 0;
+    border-bottom: 100px solid pink;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+}
+
+#sanjiao2 {
+    width: 0;
+    height: 0;
+    border-left: 100px solid pink;
+    border-bottom: 50px solid transparent;
+    border-top: 50px solid transparent;
+}
+
+#sanjiao3 {
+    width: 0;
+    height: 0;
+    border-top: 100px solid pink;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+}
+
+#sanjiao4 {
+    width: 0;
+    height: 0;
+    border-right: 100px solid pink;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+}
+
+#sanjiao5 {
+    width: 0;
+    height: 0;
+    border: 50px solid pink;
+    border-right: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+}
+
+#sanjiao6 {
+    width: 0;
+    height: 0;
+    border: 50px solid pink;
+    border-top: 50px solid transparent;
+    border-left: 50px solid transparent;
+}

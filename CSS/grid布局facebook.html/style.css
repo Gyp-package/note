@@ -1,0 +1,135 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0f2f5;
+}
+
+
+/* 按钮 */
+
+button {
+    border: none;
+    padding: 15px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* 
+.loginTitle {
+    padding: 20px 0;
+    grid-area: loginTitle;
+}
+
+.loginTitle h1 a {
+    text-decoration: none;
+    color: #1877f2;
+    font-size: 3.6rem;
+}
+
+.loginTitle p {
+    padding: 0 120px;
+} */
+
+
+/* 整个窗口 */
+
+.loginForm {
+    height: 330px;
+    background-color: #fff;
+    grid-area: loginForm;
+    margin: 0 auto;
+    width: 400px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+
+/* 密码输入框 */
+
+.loginForm .formRow {
+    margin: 5px 0;
+}
+
+.loginForm .formRow input {
+    height: 50px;
+    font-size: 1.2rem;
+    width: 95%;
+    border-radius: 5px;
+    border: 1px solid #dddfe2;
+    outline: none;
+    margin: 5px;
+}
+
+.formButton .btLoginSubmit {
+    background-color: #1877f2;
+    color: white;
+    width: 95%;
+    height: 50px;
+    line-height: 12px;
+    font-size: 1.2rem;
+}
+
+.formButton .btLoginCreatAccount {
+    margin-top: 22px;
+    background-color: #42b72a;
+    color: white;
+    width: 55%;
+    font-size: 1.1rem;
+}
+
+.formInfo p a {
+    text-decoration: none;
+    color: #1877f2;
+}
+
+.divider {
+    border: 0.1px solid #dadde1;
+    width: 95%;
+    margin: 0 auto;
+}
+
+
+/* 
+.loginFooter {
+    grid-area: loginFooter;
+}
+
+.loginFooter p {
+    padding: 12px 120px;
+    font-size: 0.9rem;
+}
+
+.loginFooter p a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+} */
+
+.containerLogin {
+    margin-top: 30px;
+    text-align: center;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-areas: "loginTitle" "loginForm" "loginFooter";
+}
+
+.loginTitle p {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+@media screen and (min-width: 900px) {
+    .containerLogin {
+        height: 75vh;
+        padding: 100px 50px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "loginTitle loginForm" "none  loginFooter";
+    }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="./#style.css">
+    <title>定位</title>
+    <style>
+        .w {
+            width: 400px;
+            height: 400px;
+            /*margin: 0 auto; */
+            /* 实现图片居中 */
+            margin: 0 auto;
+            background-color: pink;
+        }
+        
+        .box {
+            position: fixed;
+            left: 50%;
+            margin-left: 200px;
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+        
+        .nav {
+            position: sticky;
+            top: 0;
+            width: 500px;
+            height: 100px;
+            background-color: blue;
+            margin: 100px auto;
+        }
+        
+        .qq {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            left: 50%;
+            margin: -50px;
+            /* margin: auto; */
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="w">111</div>
+    <div class="nav">导航栏</div>
+    <div class="qq">绝对定位水平居中</div>
+    焦点图<br><br>
+    <div class="tb-promo">
+        <img src="百度图标.jpg" alt="百度" width="200px" height="200px">
+        <a href="#">&lt;</a>
+    </div>
+</body>
+
+</html>

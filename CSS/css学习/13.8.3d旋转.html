@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旋转</title>
+    <style>
+        body {
+            perspective: 500px;
+        }
+        
+        img {
+            display: block;
+            margin: 100px auto;
+            transition: all 1s;
+        }
+        
+        img:hover {
+            transform: rotateY(60deg);
+        }
+        
+        body {
+            perspective: 500px;
+        }
+        
+        .box {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin: 100px auto;
+            transition: all .5s;
+            transform-style: preserve-3d;
+        }
+        
+        .box:hover {
+            transform: rotateY(60deg);
+        }
+        
+        .box div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: pink;
+        }
+        
+        .box div:last-child {
+            background-color: aqua;
+            transform: rotateX(60deg);
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./图片库/Z.25小米手环.png" alt="">
+    <div class="box">
+        <div></div>
+        <div></div>
+    </div>
+</body>
+
+</html>

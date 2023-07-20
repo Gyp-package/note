@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动</title>
+    <style>
+        .clearfix:after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+            /* 设置visibility:hidden;该盒子消失，但是位置仍然保留（页面中也要占他本身大小的位置,） */
+        }
+        
+        .clearfix {
+            /* IE6、7 专有 */
+            *zoom: 1;
+        }
+        
+        .box {
+            width: 800px;
+            border: 1px solid blue;
+            margin: 0 auto;
+        }
+        
+        .damao {
+            float: left;
+            width: 300px;
+            height: 200px;
+            background-color: purple;
+        }
+        
+        .ermao {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        
+        .footer {
+            height: 200px;
+            background-color: black;
+        }
+        
+        div {
+            float: left;
+        }
+        
+        .gg {
+            /* display: inline-block; */
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+        }
+        
+        .yy {
+            /* float: left; */
+            /* display: inline-block; 转化为行内块元素*/
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+        }
+        
+        .pp {
+            /* float: left; */
+            /* display: inline-block; */
+            background-color: green;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+        }
+        
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    本节课目标：
+    <img src="浮动目标.png" alt="浮动目标" width="300px"><br> 1. <img src="清除浮动.png" alt="清除浮动" width="150px"><br>
+    <div class="gg">div</div>
+    <div class="yy">div</div>
+    <div class="pp">div</div><br><br> 浮动特性：
+    <img src="浮动特性.png" alt="浮动特性" width="300px">
+    <div class="clear"></div>
+    <div class="box clearfix">
+        <div class="damao">大毛</div>
+        <div class="ermao">二毛</div>
+    </div>
+    <div class="footer"></div>
+
+</body>
+
+</html>

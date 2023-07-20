@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #child1 {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            float: right;
+        }
+        
+        #child2 {
+            width: 50px;
+            height: 50px;
+            background-color: green;
+            float: right;
+        }
+        /* #clear {
+            clear: both;
+        } */
+        
+        #main::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        
+        #child3 {
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+            float: left;
+        }
+        
+        .bfc {
+            /* 解决父级盒子高度塌陷问题 */
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div id="child1"></div>
+        <div id="child2"></div>
+        <div id="clear"></div>
+    </div>
+    <div id="main3" class="bfc">
+        <div id="child3"></div>
+        <i class="bfc">我是行内元素</i>
+    </div>
+</body>
+
+</html>

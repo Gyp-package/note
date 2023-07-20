@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下拉菜单</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul {
+            list-style-type: none;
+        }
+        
+        .nav {
+            margin: 100px auto;
+            width: 85%;
+        }
+        
+        .nav>li {
+            float: left;
+            width: 100px;
+            text-align: center;
+        }
+        
+        .nav>li>a {
+            background-color: lightgrey;
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            color: orange;
+            text-decoration: none;
+        }
+        
+        .nav>li>ul {
+            display: none;
+        }
+        
+        .nav>li>ul li:hover {
+            background-color: darkorange;
+        }
+    </style>
+    <script src="./jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <ul class="nav">
+            <li><a href="#">入学考试 </a>
+                <ul>
+                    <li>js</li>
+                    <li>jQuery</li>
+                    <li>ajax</li>
+                </ul>
+            </li>
+
+            <li><a href="#">入学考试</a>
+                <ul>
+                    <li>js</li>
+                    <li>jQuery</li>
+                    <li>ajax</li>
+                </ul>
+            </li>
+
+            <li><a href="#">入学考试 </a>
+                <ul>
+                    <li>js</li>
+                    <li>jQuery</li>
+                    <li>ajax</li>
+                </ul>
+            </li>
+
+            <li><a href="#">入学考试</a>
+                <ul>
+                    <li>js</li>
+                    <li>jQuery</li>
+                    <li>ajax</li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+    <script>
+        $(function() {
+            // // 鼠标经过
+            // $(".nav>li").mouseover(function() {
+            //     // this不加括号，show()显示元素,hide()隐藏元素
+            //     $(this).children("ul").slideDown(200);
+            // });
+            // // 鼠标离开
+            // $(".nav>li").mouseout(function() {
+            //     $(this).children("ul").slideUp(200);
+            // });
+
+            // hover合并切换,两个参数时
+            // $(".nav>li").hover(function() {
+            //     $(this).children("ul").slideDown(200);
+            // }, function() {
+            //     $(this).children("ul").slideUp(200);
+            // })
+
+            // hover一个参数时，既表示鼠标经过有表示鼠标离开,都会触发
+            $(".nav>li").hover(function() {
+                $(this).children("ul").slideToggle(200);
+            })
+        })
+    </script>
+</body>
+
+</html>

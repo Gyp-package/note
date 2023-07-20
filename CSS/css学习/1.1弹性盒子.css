@@ -1,0 +1,55 @@
+.hezi {
+    display: flex;
+    width: 1000px;
+    height: 450px;
+}
+
+.box1 {
+    flex: 1;
+    background-color: pink;
+}
+
+.box2 {
+    flex: 2;
+    background-color: blue;
+}
+
+.box21 {
+    height: 420px;
+    background-color: green;
+    display: flex;
+}
+
+.box211 {
+    display: flex;
+    flex: 1;
+    width: 433px;
+    background-color: #fff;
+    flex-direction: column;
+}
+
+.box2111 {
+    flex: 1;
+    background-color: green;
+}
+
+e .box21111 {
+    background-color: yellow;
+}
+
+.box2112 {
+    flex: 1;
+    background-color: red;
+}
+
+.box212 {
+    flex: 1;
+    width: 233px;
+    background-color: black;
+}
+
+.box22 {
+    height: 30px;
+    margin: 5px skyblue;
+    background-color: yellow;
+}

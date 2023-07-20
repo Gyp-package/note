@@ -1,0 +1,95 @@
+/* 新浪导航 */
+
+* {
+    background-color: rgb(245, 245, 245);
+}
+
+.box1 {
+    width: 200px;
+    height: 200px;
+    border: 5px solid blue;
+    /* 层叠性 */
+    border-top: 5px solid red;
+}
+
+.box2 {
+    height: 41px;
+    line-height: 41px;
+    background-color: pink;
+}
+
+.box2 a {
+    display: inline-block;
+    padding: 0 20px;
+    border: 2px solid black;
+    border-collapse: collapse;
+    color: #000;
+    font-size: 12px;
+    text-decoration: none;
+    margin: 0;
+}
+
+.box2 a:hover {
+    background-color: yellow;
+}
+
+
+/* 小米商品栏 */
+
+.clock {
+    background-color: #fff;
+    /* background-color: green; */
+    width: 234px;
+    height: 300px;
+    padding: 20px 0 20px 0;
+}
+
+.clock .img1 {
+    text-align: center;
+}
+
+span {
+    display: block;
+}
+
+.clo1 {
+    font-size: 14px;
+    text-align: center;
+    color: #000;
+    /* background-color: red; */
+    width: 214px;
+    height: 21px;
+    margin: 0px 10px 2px;
+}
+
+.clo2 {
+    font-size: 12px;
+    color: #B0B0B0;
+    width: 214px;
+    height: 18px;
+    text-align: center;
+    margin: 0px 10px 10px;
+    /* background-color: blue; */
+}
+
+.clo3 {
+    text-align: center;
+    width: 214px;
+    height: 21px;
+    margin: 0px 10px 14px;
+    /* background-color: aqua; */
+    /* height: 214px; */
+}
+
+.clo3 .clo31 {
+    display: inline;
+    font-size: 14px;
+    color: #FF6700;
+}
+
+.clo3 .clo32 {
+    display: inline;
+    font-size: 14px;
+    color: #B0B0B0;
+    text-decoration: line-through;
+}

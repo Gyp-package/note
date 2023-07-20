@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav a {
+            display: inline-block;
+            width: 120px;
+            height: 58px;
+            background-color: pink;
+            text-indent: 2em;
+            line-height: 48px;
+            /* 文字行高等于匡高居中 */
+            color: aliceblue;
+            text-decoration: none;
+        }
+        
+        .bg1 {
+            background: url(10蓝色气泡.png);
+        }
+        
+        .bg1:hover {
+            background: url(11橙色气泡.png);
+        }
+        
+        .nav .bg2 {
+            background: url(20青色气泡.png);
+        }
+        
+        .bg2:hover {
+            background: url(22绿色气泡.png);
+        }
+        
+        .nav .bg3 {
+            background: url(30蓝色气泡.jpg);
+        }
+        
+        .bg3:hover {
+            background: url(33紫色气泡.png);
+        }
+        
+        .nav .bg4 {
+            background: url(40浅紫气泡.png);
+        }
+        
+        .bg4:hover {
+            background: url(44红色气泡.png);
+        }
+        
+        .bb {
+            height: 41px;
+            background-color: #fcfcfc;
+            border-top: 3px solid #ff8500;
+            border-bottom: 1px solid #edeef0;
+            line-height: 41px;
+            /* border-left: 1px solid white; 0.直接没有表格 1.左右边框怎么透明，框的高度怎么设置*/
+        }
+        /* 这个是边框 */
+        
+        .bb {
+            text-align: center;
+        }
+        
+        .bb a {
+            font-size: 14px;
+            text-decoration: none;
+            color: #4c4c4c;
+            display: inline-block;
+            padding: 0 20px;
+        }
+        
+        .bb a:hover {
+            background-color: #edeef0;
+            color: #ff8500;
+        }
+        /* 这里放文字属性 */
+        
+        body {
+            background-color: #f5f5f5;
+        }
+        
+        .box {
+            border: 1px solid rgb(244, 246, 244);
+            width: 349px;
+            height: 689px;
+            /* margin: 100px auto; */
+            /* 图片居中 */
+            background-color: #fff;
+        }
+        /* 图片和盒子一样大 */
+        
+        .box img {
+            width: 100%;
+        }
+        /* text-indent: 1em; 文本段落缩进，块级内容建议使用padding边框，没有width属性，不会撑开宽度，距或者margin 2盒子边距*/
+        
+        .review {
+            font-size: 23px;
+            padding: 10px 20px;
+            /* 防止父子叠加边距坍塌，可以使用margin-top: 20px; */
+            /* text-indent: 1em; */
+            color: rgb(241, 1, 136);
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bolder;
+        }
+        /* 问题：1.找不到想要的字体.2.文字过长后面不会显示省略号，会向下覆盖 */
+        
+        .appraise {
+            padding: 0 20px;
+            /* text-indent: 1em; */
+            font-family: 'Courier New', Courier, monospace;
+            height: 70px;
+        }
+        /* 1.文字加粗font-family:800;
+         2。文字上下居中,行高等于盒子高度height=;line-height=;
+         3.框怎么到下边对齐，对文字添加高即可，会挤下去，派出文字个数影响 */
+        
+        .ping {
+            padding: 0 20px;
+            margin-bottom: 5px;
+            color: rgb(182, 193, 202);
+            font-size: 12px;
+            /* 文字不加粗 */
+            font-weight: normal;
+        }
+        
+        .info {
+            border: 3px solid rgb(248, 137, 196);
+            color: rgb(248, 137, 196);
+            text-align: center;
+            font-weight: border;
+            width: 300px;
+            height: 35px;
+            line-height: 35px;
+            margin: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+
+<body>
+    1.<br>
+    <img src="五彩导航.png" alt="五彩导航" width="500px"><br>
+    <div class="nav">
+        <span><a href="#" class="bg1">五彩导航</a></span>
+        <span><a href="#"class="bg2">五彩导航</a></span>
+        <span><a href="#"class="bg3">五彩导航</a></span>
+        <span><a href="#"class="bg4">五彩导航</a></span>
+    </div>
+    <br>2.<br>
+    <div class="bb">
+        <a href="#">1上热搜</a>
+        <a href="#">2上热搜</a>
+        <a href="#">3上热搜</a>
+        <a href="#">4上热搜</a>
+    </div>
+    <img src="淘宝小框.png" alt="" width="350px" height="690px">
+    <div class="box">
+        <img src="淘宝衣服.png" alt="淘宝衣服">
+        <p class="review">限量抢，抢完恢复￥179</p>
+        <div class="appraise">E.LAND 【专柜同款】 衣恋夏季款甜心衣服</div>
+        <div class="ping">来自于吃吃水果的评价</div>
+        <div class="info"><b>立即抢购</b></div>
+    </div>
+</body>
+
+
+</html>

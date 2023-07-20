@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.ad {
+    position: fixed;
+    top: 100px;
+    left: 0px;
+}
+
+
+/* 版心 */
+
+.ad1 {
+    width: 800px;
+    height: 1400px;
+    background-color: pink;
+    margin: 0 auto;
+}
+
+
+/* 版心右侧 */
+
+.ad2 {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    margin-left: 400px;
+}

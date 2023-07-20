@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>精品服饰</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            list-style-type: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .nav {
+            width: 600px;
+            height: 450px;
+            margin: 100px auto;
+            border: 1px solid pink;
+            border-right: 0;
+            overflow: hidden;
+        }
+        
+        .left,
+        .icon {
+            float: left;
+        }
+        
+        ul li {
+            background: url(./9.jpg) repeat-x;
+        }
+        
+        ul li a {
+            display: block;
+            width: 100px;
+            height: 49px;
+            line-height: 49px;
+            color: aliceblue;
+            text-align: center;
+            border-bottom: 1px solid pink;
+        }
+        
+        .left li a:last-child {
+            border-bottom: 2px solid #000;
+        }
+        
+        .left li a:hover {
+            background-image: url(./8.jpg);
+            color: #000;
+        }
+    </style>
+    <script src="./jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="nav">
+        <ul class="left">
+            <li> <a href="#">入学考试</a> </li>
+            <li> <a href="#">明天考js</a> </li>
+            <li> <a href="#">明天考js</a> </li>
+            <li> <a href="#">明天考js</a> </li>
+            <li> <a href="#">明天考js</a> </li>
+            <li> <a href="#">明天考js</a> </li>
+            <li> <a href="#">明天考js</a> </li>
+            <li> <a href="#">明天考js</a> </li>
+            <li> <a href="#">明天考js</a> </li>
+        </ul>
+
+        <div class="icon">
+            <div>
+                <a href="#"> <img src="./1.jpeg" alt="" width="500px" height="450px"> </a>
+            </div>
+            <div>
+                <a href="#"> <img src="./2.jpg" alt="" width="500px" height="450px"> </a>
+            </div>
+            <div>
+                <a href="#"> <img src="./3.jpg" alt="" width="500px" height="450px"> </a>
+            </div>
+            <div>
+                <a href="#"> <img src="./4.jpg" alt="" width="500px" height="450px"> </a>
+            </div>
+            <div>
+                <a href="#"> <img src="./5.jpg" alt="" width="500px" height="450px"> </a>
+            </div>
+            <div>
+                <a href="#"> <img src="./6.jpg" alt="" width="500px" height="450px"> </a>
+            </div>
+            <div>
+                <a href="#"> <img src="./7.jpg" alt="" width="500px" height="450px"> </a>
+            </div>
+            <div>
+                <a href="#"> <img src="./8.jpg" alt="" width="500px" height="450px"> </a>
+            </div>
+            <div>
+                <a href="#"> <img src="./9.jpg" alt="" width="500px" height="450px"> </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function() {
+            // 鼠标经过左侧小Li
+            $(".left li").mouseover(function() {
+                // 2.得到当前Li索引
+                let index = $(this).index();
+                console.log(index);
+                $(".icon div").eq(index).show();
+                $(".icon div").eq(index).siblings().hide();
+            })
+        })
+    </script>
+</body>
+
+</html>

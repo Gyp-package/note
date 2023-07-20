@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    margin: 0 10px;
+    float: left;
+    color: #f40;
+    font-weight: bold;
+    font-size: 14px;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 5px;
+}
+
+li:hover {
+    border-radius: 15px;
+    background-color: #f40;
+    color: #fff;
+}
