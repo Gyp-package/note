@@ -5,6 +5,7 @@ const path = require('path')
     // 定义正则表达式分别匹配style和script结点，\s 空白字符，\S 非空白字符，* 表示匹配任意次，[ ] 表示匹配所有字符
 const regStyle = /<style>[\s\S]*<\/style>/
 const regScript = /<script>[\s\S]*<\/script>/
+
     // 读取 HTML 文件
 fs.readFile(path.join(__dirname, '/08.clock.html'), 'utf8', function(err, dataStr) {
     // 读取文件失败
