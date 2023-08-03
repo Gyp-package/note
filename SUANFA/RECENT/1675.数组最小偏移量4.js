@@ -95,7 +95,6 @@ class Heap {
         break;
       }
     }
-
     // 返回移除的堆顶元素
     return max;
   }

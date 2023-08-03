@@ -27,7 +27,7 @@
 
 但 **实例** 打印 student 时想获取属性和方法， 仅仅 直接显示 属性 ，他的方法在属性 __ proto __中称为隐式原型
 
-2. 类的 Student.prototype(显式原型) 与实例的student.__ proto __（隐式原型）类型相等 ,都指向 student 对象的方法
+2. 类的 Student.prototype(显式原型) 与实例的student.__ proto __（隐式原型）类型相等 ,都指向 student 对象的方法 
 
 ### 2.原型链
 
@@ -38,7 +38,7 @@
             }
      	drink(){
             console.log('喝水')
-        }
+            }
         } 
 class Teach extends Person {
             constructor(name, subject) {
@@ -65,11 +65,58 @@ class Teach extends Person {
 
 3.teacher.hasOwnProperty('name')判断该**对象自身属性**，否则是原型的属性 ![image-20221214202331393](C:\Users\ChiShuiguo\AppData\Roaming\Typora\typora-user-images\image-20221214202331393.png)
 
-### 3.instanceof  
+### 3.instanceof
 
-1. ### 分辨结构类型
+1. 分辨结构类型，
 
 2. 判断原型链（名称）是否存在，即只要在该对象的原型上可以找到就返回true
 
-3. JS万物皆对象
+   
 
+   1. 应用： 可以判断一个对象是否是特定构造函数创建的实例。
+
+```js
+class Rectangle {
+    // ...
+}
+
+const rect = new Rectangle();
+console.log(rect instanceof Rectangle);  // true
+```
+
+​         2.  应用：判断一个对象是否是某个类的子类的实例，或者是其原型链上某个构造函数的实例。
+
+```js
+class Shape {
+    // ...
+}
+
+class Circle extends Shape {
+    // ...
+}
+
+const circle = new Circle();
+console.log(circle instanceof Shape);  // true
+console.log(circle instanceof Circle);  // true
+
+```
+
+3. js中没有显示接口，instanceof判断**对象**的原型链是否实现接口，
+
+```js
+function Serializable() {
+    // ...
+}
+
+class Shape {
+    // ...
+}
+
+Shape.prototype = new Serializable();
+
+const shape = new Shape();
+console.log(shape instanceof Serializable);  // true
+
+```
+
+js中的接口是隐式的，ts中的接口是显示的，
